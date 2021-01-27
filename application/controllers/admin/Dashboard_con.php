@@ -42,8 +42,6 @@ class Dashboard_con extends CI_Controller {
 		$data['jumon']    = $this->main_mod->get_where('cbt_peserta_ujian',$where)->num_rows();
 		$data['grafik'] = $this->admin_mod->grafik()->result_array();
 
-
-
 		//load view
 		$this->load->view('admin/index', $data);
 	}
