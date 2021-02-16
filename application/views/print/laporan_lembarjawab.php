@@ -77,12 +77,12 @@ foreach ($identitas as $key) {
 		<tr>
 			<td style="width: 30%">Penilaian</td>
 			<td style="width: 1%">:</td>
-			<td style="width: 60%"><?php echo $key['ujian_nama']; ?></td>
+			<td style="width: 60%"><?php echo $key['ujian_nama']; ?> </td>
 		</tr>
 		<tr>
 			<td >Mata Pelajaran</td>
 			<td >:</td>
-			<td ><?php echo $key['mapel_nama']; ?></td>
+			<td ><?php echo $key['mapel_nama']; ?> ( Penilaian <?php if($key['ujian_jenis'] == 'U') echo "Utama"; else if($key['ujian_jenis'] == 'S') echo "Susulan"; else echo "Remidi"; ?> )</td>
 		</tr>
 		<tr>
 			<td >Tanggal</td>

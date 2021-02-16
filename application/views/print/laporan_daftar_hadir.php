@@ -67,7 +67,7 @@ foreach ($kelas as $key) {
 <h3 class="title" align="center"><strong>DAFTAR HADIR</strong></h3>
 <table>
 	<tr><td>Penilaian</td><td>: <?php echo $ujian->ujian_nama; ?></td></tr>
-	<tr><td>Mata Pelajaran</td><td>: <?php echo $ujian->mapel_nama; ?></td></tr>
+	<tr><td>Mata Pelajaran</td><td>: <?php echo $ujian->mapel_nama; ?> ( Penilaian <?php if($ujian->ujian_jenis == 'U') echo "Utama"; else if($ujian->ujian_jenis == 'S') echo "Susulan"; else echo "Remidi"; ?> ) </td></tr>
 	<tr><td>Kelas</td><td>: <?php echo $key['peserta_kelas']; ?></td></tr>
 	<tr><td>Tanggal</td><td>: <?php  $day = date('D', strtotime($ujian->ujian_tanggal)); 
 			 echo hari($day).', '.tanggal($ujian->ujian_tanggal); ?></td></tr>
