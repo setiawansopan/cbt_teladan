@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="<?php echo base_url()?>/assets/css/style.css">
 
 </head>
-<body style="background-color: #002147b0;" >
+<body style="background-color: #006391;" >
 	<div class="wrapper fullheight-side no-box-shadow-style">
 		
 		<div class="page-inner">
@@ -90,7 +90,9 @@
 								<div class="container-fluid" align="center">
 									<a href="<?php echo base_url('index.php/exam/login/logout')?>" class="btn btn-danger"><i class="fas fa-door-open"></i>Logout</a>
 								</div>
-								<br>
+								<div>
+								&nbsp;
+								<div>
 							</div>
 						</div>
 					</div>

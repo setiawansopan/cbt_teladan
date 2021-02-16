@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="<?php echo base_url()?>/assets/css/style.css">
 
 </head>
-<body style="background-color: #002147b0;" >
+<body style="background-color: #006391;" >
 	<div class="wrapper fullheight-side no-box-shadow-style">
 		
 		<div class="page-inner">
@@ -126,7 +126,7 @@
 																<tr>
 																	<td>
 																	<b><?php echo strtoupper($value['ujian_nama'].' - Kelas '.$value['ujian_tingkat']) ?></b> <br>
-																	<i class="far fa-file-alt"></i> <?php echo $value['mapel_nama'] ?> <br>
+																	<i class="far fa-file-alt"></i> <?php echo $value['mapel_nama'] ?> ( Penilaian <?php if($value['ujian_jenis'] == 'U') echo "Utama"; else if($value['ujian_jenis'] == 'S') echo "Susulan"; else echo "Remidi"; ?> ) <br>
 																	<i class="far fa-calendar-alt"></i> 
 																	<?php 
 																	$day = date('D', strtotime($value['ujian_tanggal']));
@@ -159,8 +159,11 @@
 								</div>
 								<div class="container-fluid" align="center">
 									<a href="<?php echo base_url('index.php/exam/login/logout')?>" class="btn btn-danger"><i class="fas fa-door-open"></i>Logout</a>
+									
 								</div>
-								<br>
+								<div>
+								&nbsp;
+								</div>
 							</div>
 						</div>
 					</div>

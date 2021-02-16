@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="<?php echo base_url()?>/assets/css/atlantis.css">
 
 </head>
-<body style="background-color: #002147b0;" >
+<body style="background-color: #006391;" >
 	<div class="wrapper fullheight-side no-box-shadow-style">
 		
 		<div class="page-inner">

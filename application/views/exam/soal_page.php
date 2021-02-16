@@ -60,7 +60,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #002147b0;" oncontextmenu="return false;">
+<body style="background-color: #006391;" oncontextmenu="return false;">
 	<div class="wrapper fullheight-side no-box-shadow-style">
 		
 		<div class="page-inner">
@@ -83,6 +83,7 @@
 
 								<div class="card-body">
 									<!-- <div class="separator-solid"></div> -->
+									<br>
 									<div class="invoice-top" align="center">
 										<h3 class="title"><strong><font color="#000000">PENILAIAN BERBASIS KOMPUTER <?php echo date('Y');?></strong></h3>
 									</div>

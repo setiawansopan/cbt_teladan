@@ -46,7 +46,7 @@
       }
     </style>
 </head>
-<body style="background-color: #002147b0;" >
+<body style="background-color: #006391;" >
 	<div class="wrapper fullheight-side no-box-shadow-style">
 		
 		<div class="page-inner">
@@ -66,6 +66,7 @@
 								</div> -->
 								<br>
 								<div class="card-body">
+								<br>
 									<div class="invoice-top" align="center">
 										<h3 class="title"><strong>PENILAIAN BERBASIS KOMPUTER <?php echo date('Y');?></strong></h3>
 									</div>
@@ -188,16 +189,15 @@
 									<span class="btn-label">
 										<i class="fas fa-print"></i>
 									</span>
-									&nbsp;Cetak
+									&nbsp;Cetak 
 								</button>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<a href="<?php echo base_url('index.php/exam/login/logout')?>" class="btn btn-danger"><i class="fas fa-door-open"></i> Logout</a>
 								</div>
-								</div>
-
 								<br>
-								
+								</div>							
 								</div>
+								<br>
 							</div>
 						</div>
 					</div>
