@@ -76,6 +76,9 @@
 				<a class="dropdown-item" 
 				href="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
 				 target="_blank">Daftar Nilai</a>
+				 <a class="dropdown-item" 
+				href="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
+				 target="_blank">Daftar Nilai KD</a>
 			</div>
 		</div>
 		</div>
