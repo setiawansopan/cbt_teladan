@@ -67,7 +67,7 @@
 			<div class="row justify-content-center">
 				<div class="col-12 col-lg-10 col-xl-9">
 					<h1 style="font: bold; color: #ffffff;"><i class="fas fa-graduation-cap icon-big" style="color: #ffffff;"></i>&nbsp;CBT TELADAN</h1>
-					<p style="font: bold; color: #ffffff;"><?php echo $review->ujian_nama.' | '.$review->mapel_nama.' | Kelas '.$review->ujian_tingkat; ?></p>
+					<p style="font: bold; color: #ffffff;"><?php echo $review->ujian_nama.' - '.$review->mapel_nama.' - Kelas '.$review->ujian_tingkat; ?></p>
 					<div class="page-divider"></div>
 					<div class="row">
 						<div class="col-md-12">
@@ -85,11 +85,11 @@
 									<!-- <div class="separator-solid"></div> -->
 									<br>
 									<div class="invoice-top" align="center">
-										<h3 class="title"><strong><font color="#000000">PENILAIAN BERBASIS KOMPUTER <?php echo date('Y');?></strong></h3>
+										<h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3>
 									</div>
 									<div class="row">
 										<div class="col-md-12 info-invoice">
-											<h5 id="no-soal" class="sub float-left">SOAL NOMOR : <?php echo $n;?></h5>
+											<h5 id="no-soal" class="sub float-left">NOMOR : <?php echo $n;?></h5>
 											<h5 id="ujian-time" class="sub float-right"></h5>
 											<br>
 											<table width="100%" align="center">
@@ -106,18 +106,19 @@
 									<br>
 									<div class="row">
 										<div class="col-md-12">
-											<h6 class="text-uppercase fw-bold">Skor : <?php echo $soal->soal_skor; ?></h6>
-											<br>
+											<!-- <h6 class="text-uppercase fw-bold">Skor : <?php //echo $soal->soal_skor; ?></h6>
+											<br> -->
 											<div id="soal-teks" class="invoice-detail">
 											<?php echo $soal->soal_teks; ?>	
 											</div>
 											<br>
 											<div class="invoice-detail">
-											<h6 id="jawaban" class="text-uppercase mt-4 mb-3 fw-bold">
-											JAWABAN : <?php echo $soal->pj_jawaban; ?>
-											</h6>
+											<!-- <h6 id="jawaban" class="text-uppercase mt-4 mb-3 fw-bold">
+											JAWABAN : <?php //echo $soal->pj_jawaban; ?>
+											</h6> -->
+											<br>
 											<form id="formJawaban" action="<?php echo base_url('index.php/exam/soal/act')?>" method="POST">
-											<div class="form-group form-jawaban">
+											<div class="form-group form-jawaban"  align="center">
 												<div class="selectgroup selectgroup-pills">
 													<label class="selectgroup-item">
 														<input type="radio" name="pj_jawaban" id="pj_jawaban_a" value="A" class="selectgroup-input" <?php if($soal->pj_jawaban == 'A') echo 'checked=""';?>>
@@ -165,17 +166,39 @@
 											
 											</div>	
 											
-											
+											<div>
+									&nbsp;
+									</div>
 
 										</div>	
 									<!-- batas potong sini -->
 									</div>
 								</div>
-								<div class="card-body">
-									<h6 class="text-uppercase mt-4 mb-3 fw-bold">
-										LEMBAR JAWABAN : 
-									</h6>
-									<table width="100%" border="0" cellspacing="0" cellpadding="2">
+
+							</div>
+
+
+							<div class="card card-invoice">
+								<br>
+<!-- 								<div class="container-fluid" align="center">								
+
+									<?php //$this->load->view('dependen/kop.php'); ?>
+            
+								</div> -->
+								
+								
+
+
+								<div class="card-body" align='center'>
+								<br>
+									<div class="invoice-top" align="center">
+										<h3 class="title"><strong><font color="#000000">LEMBAR JAWABAN CBT</strong></h3>
+									</div>
+									
+									<div>
+									&nbsp;
+									</div>
+									<table width="100%" border="0" cellspacing="0" cellpadding="2" align='center'>
 									<?php
 									$no = 0;
 									foreach ($lembar_jawab as $value) {
@@ -189,7 +212,7 @@
 									?>
 									<tr>
 										<?php
-										for ($j=$i; $j<=100; $j+=10) { 
+										for ($j=$i; $j<=50; $j+=10) { 
 											?>
 											<td width="5%" align="center">
 												<?php if($j <= $this->session->jum_soal) { ?>
@@ -425,7 +448,7 @@
                 	$("#pj_id").val(data.soal['pj_id']);
                 	$("#soal_id").val(data.soal['soal_id']);
                 	$("#soal-teks").html(data.soal['soal_teks']);
-                	$("#no-soal").html("SOAL NOMOR : "+data.n_new);
+                	$("#no-soal").html("NOMOR : "+data.n_new);
                 	$("#jawaban").html("JAWABAN : "+data.soal.pj_jawaban);
                 	setJawaban(data.soal.pj_jawaban, data.soal.pj_ragu);
                 	setLembarJawab(data.n_new, data.soal.pj_ragu);
@@ -587,7 +610,7 @@
                 	$("#pj_id").val(data.soal['pj_id']);
                 	$("#soal_id").val(data.soal['soal_id']);
                 	$("#soal-teks").html(data.soal['soal_teks']);
-                	$("#no-soal").html("SOAL NOMOR : "+1);
+                	$("#no-soal").html("NOMOR : "+1);
                 	$("#jawaban").html("JAWABAN : "+data.soal.pj_jawaban);
                 	setJawaban(data.soal.pj_jawaban, data.soal.pj_ragu);
                 	setLembarJawab(1, data.soal.pj_ragu);
@@ -618,7 +641,7 @@
                 	$("#pj_id").val(data.soal['pj_id']);
                 	$("#soal_id").val(data.soal['soal_id']);
                 	$("#soal-teks").html(data.soal['soal_teks']);
-                	$("#no-soal").html("SOAL NOMOR : "+data.n);
+                	$("#no-soal").html("NOMOR : "+data.n);
                 	$("#jawaban").html("JAWABAN : "+data.soal.pj_jawaban);
                 	setJawaban(data.soal.pj_jawaban, data.soal.pj_ragu);
                 	setLembarJawab(data.n, data.soal.pj_ragu);
@@ -649,7 +672,7 @@
                 	$("#pj_id").val(data.soal['pj_id']);
                 	$("#soal_id").val(data.soal['soal_id']);
                 	$("#soal-teks").html(data.soal['soal_teks']);
-                	$("#no-soal").html("SOAL NOMOR : "+data.n_new);
+                	$("#no-soal").html("NOMOR : "+data.n_new);
                 	$("#jawaban").html("JAWABAN : "+data.soal.pj_jawaban);
                 	setJawaban(data.soal.pj_jawaban, data.soal.pj_ragu);
                 	setLembarJawab(data.n_new, data.soal.pj_ragu);
@@ -694,7 +717,7 @@
                 	$("#pj_id").val(data.soal['pj_id']);
                 	$("#soal_id").val(data.soal['soal_id']);
                 	$("#soal-teks").html(data.soal['soal_teks']);
-                	$("#no-soal").html("SOAL NOMOR : "+data.n_new);
+                	$("#no-soal").html("NOMOR : "+data.n_new);
                 	$("#jawaban").html("JAWABAN : "+data.soal.pj_jawaban);
                 	setJawaban(data.soal.pj_jawaban, data.soal.pj_ragu);
                 	setLembarJawab(data.n_new, data.soal.pj_ragu);
