@@ -71,38 +71,35 @@
 					<div class="page-divider"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="card card-invoice">
+							<div class="card">
 								<br>
 <!-- 								<div class="container-fluid" align="center">								
 
 									<?php //$this->load->view('dependen/kop.php'); ?>
             
 								</div> -->
-								
-								
-
-								<div class="card-body">
-									<!-- <div class="separator-solid"></div> -->
-									<br>
-									<div class="invoice-top" align="center">
-										<h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3>
-									</div>
-									<div class="row">
-										<div class="col-md-12 info-invoice">
-											<h5 id="no-soal" class="sub float-left">NOMOR : <?php echo $n;?></h5>
-											<h5 id="ujian-time" class="sub float-right"></h5>
-											<br>
-											<table width="100%" align="center">
-												<tr>
-											    	<td colspan="3" bgcolor="#000000">
-											    	</td>
-											    </tr>
-											</table>
-										</div>
-										
-									<!-- batas potong sini -->
-									</div>
+								<div class="card-header">
+									<div class="d-flex align-items-center">
 									
+										<!-- judul header -->
+										<table width=100%>
+										<!-- <tr>
+	  										<td colspan="2" align="center"><h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3></td>
+										</tr> -->
+										<tr>
+	  										<td width=25%><b><h5 id="no-soal" class="sub float-left">NOMOR : <?php echo $n;?></h5></b></td>
+											<td width=50% align="center"><h3><strong><font color="#000000">LEMBAR SOAL</strong></h3></td>
+											<td width=25%><font color="red"><b><h5 id="ujian-time" class="sub float-right"></h5></b></font></td>
+										</tr>
+										</table>
+										
+										<!-- sampai sini judul header -->
+
+									</div>
+								</div>
+								
+	  							<!-- bagian tengan soal jangan di utak atik -->
+								<div class="container-fluid">
 									<br>
 									<div class="row">
 										<div class="col-md-12">
@@ -176,28 +173,31 @@
 								</div>
 
 							</div>
+	  						<!-- bagian tengah soal sampai disini -->
 
-
-							<div class="card card-invoice">
-								<br>
-<!-- 								<div class="container-fluid" align="center">								
-
-									<?php //$this->load->view('dependen/kop.php'); ?>
-            
-								</div> -->
-								
-								
-
+	  						<!-- bagian lembar jawaban -->
+							<div class="card">
+							<!-- judullembar jawab -->
+								<div class="card-header">
+									<div class="d-flex align-items-center">	
+									
+									<!-- judul header -->
+									<table width=100%>
+										<!-- <tr>
+	  										<td colspan="2" align="center"><h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3></td>
+										</tr> -->
+										<tr>
+											<td width=50% align="center"><h3><strong><font color="#000000">LEMBAR JAWABAN</strong></h3></td>
+										</tr>
+										</table>
+										
+										<!-- sampai sini judul header -->
+	  								
+									</div>
+								</div>
+	  						<!-- judul sampai sini -->
 
 								<div class="card-body" align='center'>
-								<br>
-									<div class="invoice-top" align="center">
-										<h3 class="title"><strong><font color="#000000">LEMBAR JAWABAN CBT</strong></h3>
-									</div>
-									
-									<div>
-									&nbsp;
-									</div>
 									<table width="100%" border="0" cellspacing="0" cellpadding="2" align='center'>
 									<?php
 									$no = 0;
