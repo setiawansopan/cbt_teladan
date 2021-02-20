@@ -37,17 +37,32 @@
 					<div class="page-divider"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="card card-invoice">
-								<!-- <br>
-								<div class="container-fluid" align="center"> 
-									<?php //$this->load->view('dependen/kop.php'); ?>
-								</div> -->
+							<div class="card">
+							<br>
 
+							<!-- judul lembar jawab -->
+							<div class="card-header">
+							<div class="d-flex align-items-center">	
+							
+							<!-- judul header -->
+							<table width=100%>
+								<!-- <tr>
+										<td colspan="2" align="center"><h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3></td>
+								</tr> -->
+								<tr>
+									<td width=50% align="center"><h3><strong><font color="#000000">IDENTITAS PESERTA</strong></h3></td>
+								</tr>
+								</table>
+								
+								<!-- sampai sini judul header -->
+								
+							</div>
+							</div>
+							<!-- judul sampai sini -->
+							<div>
+							&nbsp;
+							</div>
 								<div class="container-fluid">
-										<br>
-										<div class="invoice-top" align="center">
-											<h3 class="title"><strong><font color="#000000">PENILAIAN BERBASIS KOMPUTER <?php echo date('Y');?></strong></font></strong></h3>
-										</div>
 									<div class="row">
 										<div class="col-md-4 info-invoice" align="center">
 											<!-- <h5 class="sub">FOTO PESERTA</h5> -->

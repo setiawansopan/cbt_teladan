@@ -59,17 +59,30 @@
 					<div class="page-divider"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="card card-invoice">
-								<!-- <br>
-								<div class="container-fluid" align="center"> 
-									<?php //$this->load->view('dependen/kop.php'); ?>
-								</div> -->
+							<div class="card">
 								<br>
-								<div class="card-body">
-								<br>
-									<div class="invoice-top" align="center">
-										<h3 class="title"><strong>PENILAIAN BERBASIS KOMPUTER <?php echo date('Y');?></strong></h3>
+
+	  							<!-- judul lembar jawab -->
+								<div class="card-header">
+									<div class="d-flex align-items-center">	
+									
+									<!-- judul header -->
+									<table width=100%>
+										<!-- <tr>
+	  										<td colspan="2" align="center"><h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3></td>
+										</tr> -->
+										<tr>
+											<td width=50% align="center"><h3><strong><font color="#000000">REVIEW HASIL PENILAIAN</strong></h3></td>
+										</tr>
+										</table>
+										
+										<!-- sampai sini judul header -->
+	  								
 									</div>
+								</div>
+	  						<!-- judul sampai sini -->
+
+								<div class="card-body">
 									<div class="row">
 										<div class="col-md-12 info-invoice">
 											<h5 class="sub float-left">IDENTITAS</h5>
@@ -126,7 +139,7 @@
 									<h6 class="text-uppercase mt-4 mb-3 fw-bold">
 										JAWABAN 
 									</h6>
-									<table width="50%" border="0" cellspacing="0" cellpadding="2">
+									<table width="100%" border="0" cellspacing="0" cellpadding="2">
 									<?php
 									$no = 0;
 									foreach ($lembar_jawab as $value) {
@@ -148,7 +161,6 @@
 									?>
 									</table>
 									<p><font size="1" color="red">*Urutan soal <b>TIDAK SESUAI</b> dengan urutan yang sebenarnya.</font></p>
-									<br>
 								</div>
 							
 									<!-- HASIL -->
@@ -197,7 +209,6 @@
 								<br>
 								</div>							
 								</div>
-								<br>
 							</div>
 						</div>
 					</div>

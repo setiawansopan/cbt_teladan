@@ -73,11 +73,7 @@
 						<div class="col-md-12">
 							<div class="card">
 								<br>
-<!-- 								<div class="container-fluid" align="center">								
-
-									<?php //$this->load->view('dependen/kop.php'); ?>
-            
-								</div> -->
+								<!-- bagian header -->
 								<div class="card-header">
 									<div class="d-flex align-items-center">
 									
@@ -97,7 +93,8 @@
 
 									</div>
 								</div>
-								
+								<!-- selesai header -->
+
 	  							<!-- bagian tengan soal jangan di utak atik -->
 								<div class="container-fluid">
 									<br>
@@ -145,6 +142,7 @@
 												</div>
 											</div>
 											<p id="tes-text"></p>
+											<hr>
 											<div class="form-group" align="center">
 												<input type="hidden" id="pj_id" name="pj_id" value="<?php echo $soal->pj_id; ?>">
 												<input type="hidden" id="soal_id" name="soal_id" value="<?php echo $soal->pj_soal_id; ?>">
@@ -177,7 +175,7 @@
 
 	  						<!-- bagian lembar jawaban -->
 							<div class="card">
-							<!-- judullembar jawab -->
+							<!-- judul lembar jawab -->
 								<div class="card-header">
 									<div class="d-flex align-items-center">	
 									
@@ -212,7 +210,7 @@
 									?>
 									<tr>
 										<?php
-										for ($j=$i; $j<=50; $j+=10) { 
+										for ($j=$i; $j<=$this->session->jum_soal; $j+=10) { 
 											?>
 											<td width="5%" align="center">
 												<?php if($j <= $this->session->jum_soal) { ?>

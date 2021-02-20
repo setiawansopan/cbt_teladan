@@ -36,17 +36,31 @@
 					<div class="page-divider"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="card card-invoice">
-								<!-- <br>
-								<div class="container-fluid" align="center"> 
-									<?php //$this->load->view('dependen/kop.php'); ?>
-								</div> -->
+						<div class="card">
+							<br>
+
+							<!-- judul lembar jawab -->
+							<div class="card-header">
+							<div class="d-flex align-items-center">	
+							
+							<!-- judul header -->
+							<table width=100%>
+								<!-- <tr>
+										<td colspan="2" align="center"><h3 class="title"><strong><font color="#000000">LEMBAR SOAL CBT</strong></h3></td>
+								</tr> -->
+								<tr>
+									<td width=50% align="center"><h3><strong><font color="#000000">DATA PENILAIAN</strong></h3></td>
+								</tr>
+								</table>
+								
+								<!-- sampai sini judul header -->
+								
+							</div>
+							</div>
+							<!-- judul sampai sini -->
 
 								<div class="container-fluid">
-										<br>
-										<div class="invoice-top" align="center">
-											<h3 class="title"><strong><font color="#000000">PENILAIAN BERBASIS KOMPUTER <?php echo date('Y');?></strong></font></strong></h3>
-										</div>
+
 									<div class="row" style="align-content: center;">
 
 										<div class="col-md-12 info-invoice">
@@ -90,7 +104,7 @@
 												<tr>
 													<td width="15%">Pinalti Waktu</td>
 													<td width="5%">:</td>
-													<td width="65%"><?php if($ujian->ujian_pinalti == 1) echo "YA. ( Durasi ujian akan dikurangi dengan lama waktu keterlembatan )"; else echo "TIDAK. ( Durasi ujian tidak akan dikurangi dengan lama waktu keterlembatan )";?></td>
+													<td width="65%"><?php if($ujian->ujian_pinalti == 1) echo "YA. ( Durasi ujian akan dikurangi dengan waktu keterlembatan )"; else echo "TIDAK. ( Durasi ujian tidak akan dikurangi dengan lama waktu keterlembatan )";?></td>
 												</tr>
 											</table>
 										</div>
@@ -121,11 +135,13 @@
 										<input type="hidden" name="ujian_id" value="<?php echo $ujian->ujian_id; ?>">
 										<input type="text" class="form-control"  name="ujian_token" required="flag" placeholder="MASUKKAN TOKEN">
 									</div>
-									<div class="form-group">
+									<div class="form-group col-md-12" align="center">
+										<hr>
 										<input type="submit" name="submit" value="Mulai Penilaian" class="btn btn-info" >
 										<a href="<?php echo base_url('index.php/exam/identitas')?>" class="btn btn-danger"><i class="fas fa-angle-double-left"></i> Kembali</a>
 									</div>
 								</form>
+								<br>
 								</div>
 							</div>
 						</div>
