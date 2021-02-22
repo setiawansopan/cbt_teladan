@@ -1,3 +1,19 @@
+<?php 
+if ($this->session->flashdata('simpan') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data guru mengajar berhasil disimpan!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+
+<?php } ?>
 <!-- awal kotak info atas -->
 <div class="card">
 	<div class="card-header">

@@ -225,8 +225,5 @@
 					padding:{left:15,right:15,top:15,bottom:15}
 				}
 			},
-		});
-
-        
-	    
+		});    
 	</script>
