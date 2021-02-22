@@ -108,9 +108,28 @@
 			<div class="card-body">
 				<?php foreach ($online as $value) { ?>
 				<div class="d-flex">
+				<?php $file_name = "images/peserta/".$value['peserta_nis'].".jpg"; ?>
+				<!-- status online -->
+				<?php if($value['pu_status'] == 'on') { ?>
 					<div class="avatar avatar-online">
-						<span class="avatar-title rounded-circle border border-white <?php if($value['pu_status'] == 'of') echo 'bg-danger'; else echo 'bg-success' ?>"><?php echo substr($value['peserta_nama'], 0, 1) ?></span>
+						<?php if(file_exists($file_name))  { ?>
+						<img src="<?php echo base_url($file_name); ?>" alt="..." class="avatar-img rounded-circle">
+						<?php } else { ?>
+						<span class="avatar-title rounded-circle border border-white bg-success "><?php echo substr($value['peserta_nama'], 0, 1) ?></span>
+						<?php } ?>
 					</div>
+				<?php } ?>
+				<!-- status ofline -->
+				<?php if($value['pu_status'] == 'of') { ?>
+					<div class="avatar avatar-offline">
+						<?php if(file_exists($file_name))  { ?>
+						<img src="<?php echo base_url($file_name); ?>" alt="..." class="avatar-img rounded-circle">
+						<?php } else { ?>
+						<span class="avatar-title rounded-circle border border-white bg-danger"><?php echo substr($value['peserta_nama'], 0, 1) ?></span>
+						<?php } ?>
+					</div>
+				<?php } ?>
+
 					<div class="flex-1 ml-3 pt-1">
 						<h6 class="text-uppercase fw-bold mb-1"><?php echo $value['peserta_nama'] ?>
 						<?php if($value['pu_status'] == 'on') { ?>
