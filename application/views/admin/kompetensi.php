@@ -220,6 +220,41 @@
 				</tbody>
 			</table>
 		</div>
-
+</div>
 </div>						
 <br>
+
+<?php 
+if ($this->session->flashdata('simpan') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data kompetensi dasar berhasil disimpan!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
+
+<?php 
+if ($this->session->flashdata('update') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data kompetensi dasar berhasil diperbaharui!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
+
+
+

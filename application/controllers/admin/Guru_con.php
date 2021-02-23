@@ -151,7 +151,7 @@ class Guru_con extends CI_Controller {
                 unlink($files);
             }
         });
-        
+        $this->session->set_flashdata('simpan','true');
         redirect(base_url('index.php/admin/guru_con/guru'));
 	}
 

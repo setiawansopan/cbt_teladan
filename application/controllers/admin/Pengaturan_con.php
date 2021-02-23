@@ -20,7 +20,7 @@ class Pengaturan_con extends CI_Controller {
 		$data['sub_judul'] = "Halaman pengaturan sistem CBT Teladan";
 
 		//navbar
-		$data['navbar'] = array('pengaturan', 'reset');
+		$data['navbar'] = array('pengaturan');
 		$data['nav_active'] = "pengaturan";
 
 		//sidebar
@@ -57,7 +57,7 @@ class Pengaturan_con extends CI_Controller {
 
 		$this->load->model('admin/main_mod');
 		$this->main_mod->update('cbt_setting', $where , $dataset);
-
+		$this->session->set_flashdata('update','true');
 		redirect(base_url('index.php/admin/pengaturan_con/pengaturan')); 
 	}
 
@@ -78,10 +78,12 @@ class Pengaturan_con extends CI_Controller {
 		{
 			$this->load->model('admin/main_mod');
 			$this->main_mod->insert('cbt_admin', $dataad);
+			$this->session->set_flashdata('simpan','true');
 			redirect(base_url('index.php/admin/pengaturan_con/pengaturan')); 
 		}
 		else {
 			$this->session->set_flashdata('pesan','Username sudah dipakai!');
+			$this->session->set_flashdata('gagal','true');
 			redirect(base_url('index.php/admin/pengaturan_con/pengaturan'));
 		}
 	}
@@ -109,6 +111,7 @@ class Pengaturan_con extends CI_Controller {
 
 		$this->load->model('admin/main_mod');
 		$this->main_mod->update('cbt_admin', $where, $datamin);
+		$this->session->set_flashdata('reset','true');
 		redirect(base_url('index.php/admin/pengaturan_con/pengaturan')); 
 	}
 }

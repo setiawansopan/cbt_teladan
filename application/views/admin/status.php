@@ -123,4 +123,19 @@
 		</div>
 	</div>
 </div>
-						
+
+<?php 
+if ($this->session->flashdata('simpan') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Re-open status peserta berhasil!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>						

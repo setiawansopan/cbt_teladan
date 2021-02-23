@@ -83,7 +83,7 @@ class Ujian_con extends CI_Controller {
 
 		//$this->load->model('admin/main_mod');
 		$this->main_mod->insert('cbt_ujian', $data);
-
+		$this->session->set_flashdata('simpan','true');
 		redirect(base_url('index.php/admin/ujian_con/ujian'));
 	}
 
@@ -131,7 +131,7 @@ class Ujian_con extends CI_Controller {
 
 		$where = array('ujian_id' => $this->input->post('ujian_id') );
 		$this->main_mod->update('cbt_ujian', $where, $data);
-
+		$this->session->set_flashdata('update','true');
 		redirect(base_url('index.php/admin/ujian_con/ujian'));
 	}
 
@@ -140,6 +140,7 @@ class Ujian_con extends CI_Controller {
 		$where = array('ujian_id' => $this->input->get('ujian_id') );
 		$datares = array('ujian_token' => acak(6));
 		$this->main_mod->update('cbt_ujian', $where, $datares);
+		$this->session->set_flashdata('reset','true');
 		redirect(base_url('index.php/admin/ujian_con/ujian'));
 	}
 

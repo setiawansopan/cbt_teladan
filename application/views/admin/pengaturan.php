@@ -121,9 +121,7 @@
 				</div>
 			</div>
 			<div class="card-body">
-			<?php if($this->session->flashdata('pesan')) { ?>
-	                <div class="alert alert-danger" role="alert" style="color:red"><?php echo $this->session->flashdata('pesan') ?></div>
-	            <?php } ?>
+
 			<div class="table-responsive">
 			<table id="add-row" class="display table table-sm table-striped table-hover table-head-bg-*states" >
 				<thead style="background-color: #162447;">
@@ -168,3 +166,67 @@
 		</div>
 	</div>
 </div>
+
+<?php 
+if ($this->session->flashdata('update') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Pengaturan data sekolah berhasil diperbaharui!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
+
+<?php 
+if ($this->session->flashdata('reset') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data administrator berhasil direset!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
+
+<?php 
+if ($this->session->flashdata('simpan') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data administrator berhasil disimpan!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
+
+<?php 
+if ($this->session->flashdata('gagal') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Kesalahan!", "Username sudah dipakai oleh admin yang lain!", {
+			icon : "error",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>

@@ -152,7 +152,7 @@ class Peserta_con extends CI_Controller {
                 unlink($files);
             }
         });
-        
+        $this->session->set_flashdata('simpan','true');
         redirect(base_url('index.php/admin/peserta_con/peserta'));
 	}
 

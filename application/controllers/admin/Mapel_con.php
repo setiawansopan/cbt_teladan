@@ -51,6 +51,7 @@ class Mapel_con extends CI_Controller {
 
 		//load model
 		$this->main_mod->insert('cbt_mapel', $datamap);
+		$this->session->set_flashdata('simpan','true');
 		redirect(base_url('index.php/admin/mapel_con/mapel'));
 	}
 
@@ -67,6 +68,7 @@ class Mapel_con extends CI_Controller {
 
 		//load model
 		$this->main_mod->update('cbt_mapel', $where, $datamap);
+		$this->session->set_flashdata('update','true');
 		redirect(base_url('index.php/admin/mapel_con/mapel'));
 	}
 
@@ -135,6 +137,7 @@ class Mapel_con extends CI_Controller {
 
 		//load model
 		$this->main_mod->insert('cbt_kd', $datakom);
+		$this->session->set_flashdata('simpan','true');
 		redirect(base_url('index.php/admin/mapel_con/kompetensi?mapel_id='.$this->input->post('kd_mapel_id').''));
 	}
 
@@ -151,6 +154,7 @@ class Mapel_con extends CI_Controller {
 
 		//load model
 		$this->main_mod->update('cbt_kd', $where, $datakd);
+		$this->session->set_flashdata('update','true');
 		redirect(base_url('index.php/admin/mapel_con/kompetensi?mapel_id='.$this->input->post('kd_mapel_id')));
 	}
 

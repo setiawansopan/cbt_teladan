@@ -131,6 +131,7 @@ class Status_con extends CI_Controller {
 		$this->main_mod->update('cbt_peserta_ujian', $where_pu, $data);
 
 		//redirect
+		$this->session->set_flashdata('simpan','true');
 		redirect(base_url('index.php/admin/status_con/status'));
 	}
 }
