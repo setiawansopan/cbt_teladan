@@ -117,12 +117,14 @@ class Identitas extends CI_Controller {
 
 		//cek kondisi
 		if($pu_status == 'of') {
-			$this->session->set_flashdata('error', 'KESALAHAN : Anda telah menyelesaikan penilaian ini.');
+			//$this->session->set_flashdata('error', 'KESALAHAN : Anda telah menyelesaikan penilaian ini.');
+			$this->session->set_flashdata('err_status', 'true');
 			redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
 		}
 
 		else if($ujian_token != $token) {
-			$this->session->set_flashdata('error', 'KESALAHAN : Token Tidak Valid');
+			//$this->session->set_flashdata('error', 'KESALAHAN : Token Tidak Valid');
+			$this->session->set_flashdata('err_token', 'true');
 			redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
 		}
 		else

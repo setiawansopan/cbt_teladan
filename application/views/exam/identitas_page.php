@@ -40,7 +40,7 @@
 							<div class="card">
 
 							<!-- judul lembar jawab -->
-							<div class="card-header">
+							<div class="card-header"  style="background-color: #d9ecf2;">
 							<div class="d-flex align-items-center">	
 							
 							<!-- judul header -->
@@ -76,7 +76,7 @@
 										</div>
 										<div class="col-md-8 info-invoice">
 											<!-- <h5 class="sub">IDENTITAS</h5> -->
-											<table width="75%" class="table ">
+											<table width="75%" class="table table-hover">
 												<tr>
 													<td width="35%">Nama</td>
 													<td width="3%">:</td>
@@ -112,8 +112,8 @@
 										</div>
 									</div>
 									
-									<h3 align="center">WAKTU SERVER = <b><?php echo date('H:i:s') ?></b> WIB</h3>
-									
+									<!-- <h3 align="center">WAKTU SERVER = <b><?php //echo date('H:i:s') ?></b> WIB</h3> -->
+									<br>
 									<div class="row">
 										<div class="col-md-12">
 											<div class="invoice-detail">

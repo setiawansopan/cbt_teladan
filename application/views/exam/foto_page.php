@@ -41,7 +41,7 @@
 
 
 							<!-- judul lembar jawab -->
-							<div class="card-header">
+							<div class="card-header" style="background-color: #d9ecf2;">
 							<div class="d-flex align-items-center">	
 							
 							<!-- judul header -->

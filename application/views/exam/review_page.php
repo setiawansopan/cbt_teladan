@@ -63,7 +63,7 @@
 							
 
 	  							<!-- judul lembar jawab -->
-								<div class="card-header">
+								<div class="card-header"  style="background-color: #d9ecf2;">
 									<div class="d-flex align-items-center">	
 									
 									<!-- judul header -->
@@ -160,6 +160,7 @@
 									<?php }
 									?>
 									</table>
+									<br>
 									<p><font size="1" color="red">*Urutan soal <b>TIDAK SESUAI</b> dengan urutan yang sebenarnya.</font></p>
 								</div>
 							

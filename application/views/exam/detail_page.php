@@ -39,7 +39,7 @@
 						<div class="card">
 	
 							<!-- judul lembar jawab -->
-							<div class="card-header">
+							<div class="card-header" style="background-color: #d9ecf2;">
 							<div class="d-flex align-items-center">	
 							
 							<!-- judul header -->
@@ -64,7 +64,7 @@
 
 										<div class="col-md-12 info-invoice">
 											<!-- <h5 class="sub">IDENTITAS</h5> -->
-											<table width="75%" class="table " align="center">
+											<table width="75%" class="table table-hover" align="center">
 												<tr>
 													<td width="35%">Nama Penilaian</td>
 													<td width="3%">:</td>
@@ -149,7 +149,37 @@
 			</div>
 		</div>
 
+		<?php 
+		if ($this->session->flashdata('err_status') == 'true') { ?>
+		<script type='text/javascript'>
+		setTimeout(function () {  
+			swal("Kesalahan!", "Anda telah menyelesaikan penilaian ini!", {
+					icon : "error",
+					buttons: {        			
+					confirm: {
+					className : 'btn btn-black'
+							}
+						},
+					});  
+			},10); 
+		</script>
+		<?php } ?>
 
+		<?php 
+		if ($this->session->flashdata('err_token') == 'true') { ?>
+		<script type='text/javascript'>
+		setTimeout(function () {  
+			swal("Kesalahan!", "Kode TOKEN yang anda masukkan tidak valid!", {
+					icon : "error",
+					buttons: {        			
+					confirm: {
+					className : 'btn btn-black'
+							}
+						},
+					});  
+			},10); 
+		</script>
+		<?php } ?>
 
 		<!-- End Custom template -->
 	</div>
@@ -166,4 +196,6 @@
 	<script src="<?php echo base_url()?>/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 	<!-- Atlantis JS -->
 	<script src="<?php echo base_url()?>/assets/js/atlantis.min.js"></script>
+	<!-- Sweet Alert -->
+	<script src="<?php echo base_url()?>/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 </html>

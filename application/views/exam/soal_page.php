@@ -74,7 +74,7 @@
 							<div class="card">
 							
 								<!-- bagian header -->
-								<div class="card-header">
+								<div class="card-header" style="background-color: #d9ecf2;">
 									<div class="d-flex align-items-center">
 									
 										<!-- judul header -->
@@ -176,7 +176,7 @@
 	  						<!-- bagian lembar jawaban -->
 							<div class="card">
 							<!-- judul lembar jawab -->
-								<div class="card-header">
+								<div class="card-header" style="background-color: #d9ecf2;">
 									<div class="d-flex align-items-center">	
 									
 									<!-- judul header -->
@@ -254,8 +254,8 @@
   			<div class="modal-dialog" role="document">
     			<div class="modal-content">
         			<form action="<?php echo base_url('index.php/exam/soal/selesai')?>" method="POST">
-	      				<div class="modal-header">
-	        				<h5 class="modal-title" id="modalSelesaiLabel">KONFIRMASI</h5>
+	      				<div class="modal-header" style="background-color: #d9ecf2;">
+	        				<h5 class="modal-title align-items-center" id="modalSelesaiLabel">KONFIRMASI</h5>
 	      				</div>
 	      				<div class="modal-body">
         					<div class="col-md-12 custom-control custom-checkbox">
