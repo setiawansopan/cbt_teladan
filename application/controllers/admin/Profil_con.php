@@ -46,17 +46,20 @@ class Profil_con extends CI_Controller {
 
 		if($admin_password != $admin_repassword)
 		{
-			$this->session->set_flashdata('error','Password tidak sama!');
+			//$this->session->set_flashdata('error','Password tidak sama!');
+			$this->session->set_flashdata('err_pass','true');
 			redirect(base_url('index.php/admin/profil_con/profil'));
 		}
 		else if(strlen($admin_password) < 8 || strlen($admin_password) > 15)
 		{
-			$this->session->set_flashdata('error','Password minimal 8 karakter dan maksimal 15 karakter!');
+			//$this->session->set_flashdata('error','Password minimal 8 karakter dan maksimal 15 karakter!');
+			$this->session->set_flashdata('err_char','true');
 			redirect(base_url('index.php/admin/profil_con/profil'));
 		}
 		else if(!preg_match("/^[a-zA-Z0-9]*$/", $admin_password))
 		{
-			$this->session->set_flashdata('error','Password tidak boleh menggunakan spasi!');
+			//$this->session->set_flashdata('error','Password tidak boleh menggunakan spasi!');
+			$this->session->set_flashdata('err_space','true');
 			redirect(base_url('index.php/admin/profil_con/profil'));
 		}
 
@@ -72,7 +75,8 @@ class Profil_con extends CI_Controller {
 			//update
 			$this->main_mod->update('cbt_admin', $where, $data);
 			//redirect
-			$this->session->set_flashdata('success','Password berhasil diupdate!');
+			//$this->session->set_flashdata('success','Password berhasil diupdate!');
+			$this->session->set_flashdata('simpan','true');
 			redirect(base_url('index.php/admin/profil_con/profil'));
 		}
 	}
@@ -94,12 +98,14 @@ class Profil_con extends CI_Controller {
         if ( ! $this->upload->do_upload('userfile'))
         {
                 $this->session->set_flashdata('error_foto', $this->upload->display_errors());
+				$this->session->set_flashdata('err_foto','true');
                 redirect(base_url('index.php/admin/profil_con/profil'));
         }
         else
         {
                 $data = array('upload_data' => $this->upload->data());
-                $this->session->set_flashdata('success_foto', 'Upload Foto berhasil!');
+				$this->session->set_flashdata('foto','true');
+                //$this->session->set_flashdata('success_foto', 'Upload Foto berhasil!');
                 redirect(base_url('index.php/admin/profil_con/profil'));
         }
 	}

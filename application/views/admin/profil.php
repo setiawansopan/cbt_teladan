@@ -1,13 +1,5 @@
 <div class="row">
 	<div class="col-md-6">
-		<!-- tampil pesan -->
-		<?php if($this->session->flashdata('success')) { ?>
-		    <div class="alert alert-success" role="alert" style="color:green"><?php echo $this->session->flashdata('success') ?></div>
-		<?php } ?> 
-		<?php if($this->session->flashdata('error')) { ?>
-		    <div class="alert alert-danger" role="alert" style="color:red"><?php echo $this->session->flashdata('error') ?></div>
-		<?php } ?> 
-
 		<div class="card">
 			<div class="card-header">
 				<div class="card-title">Data Profil Administrator</div>
@@ -44,15 +36,6 @@
 	</div>
 
 <div class="col-md-6">
-
-		<!-- tampil pesan -->
-		<?php if($this->session->flashdata('success_foto')) { ?>
-		    <div class="alert alert-success" role="alert" style="color:green"><?php echo $this->session->flashdata('success_foto') ?></div>
-		<?php } ?> 
-		<?php if($this->session->flashdata('error_foto')) { ?>
-		    <div class="alert alert-danger" role="alert" style="color:red"><?php echo $this->session->flashdata('error_foto') ?></div>
-		<?php } ?> 
-
 <div class="card">
 	<div class="card-header">
 		<div class="card-title">Foto Profil</div>
@@ -82,3 +65,98 @@
 	</div>
 </div>	
 </div>
+
+<?php 
+if ($this->session->flashdata('foto') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Foto profil berhasil diperbaharui!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
+
+<?php 
+if ($this->session->flashdata('err_foto') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Kesalahan!", "Ada kesalahan pada foto yang diupload!", {
+			icon : "error",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
+
+<?php 
+if ($this->session->flashdata('simpan') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data profil berhasil diperbaharui!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
+
+<?php 
+if ($this->session->flashdata('err_pass') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Kesalahan!", "Data password yang anda masukkan tidak sama!", {
+			icon : "error",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
+
+<?php 
+if ($this->session->flashdata('err_char') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Kesalahan!", "Data password harus memiliki panjang 8 s/d 15 karakter!", {
+			icon : "error",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
+<?php 
+if ($this->session->flashdata('err_space') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Kesalahan!", "Data password tidak boleh mengandung spasi!", {
+			icon : "error",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
