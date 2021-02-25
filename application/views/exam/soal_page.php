@@ -55,6 +55,17 @@
       	text-decoration: none;
 
       }
+      
+      .selectgroup-input, .selectgroup-button {
+        border-color: #1572E8 !important;
+        color: #000 !important;
+      }
+      
+      .selectgroup-input:checked + .selectgroup-button {
+        color: #fff !important;
+        background: #1572E8 !important;
+      }
+      
     </style>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -291,6 +302,9 @@
 	<script src="<?php echo base_url()?>/assets/js/atlantis.min.js"></script>
 
 	<script>
+	    $(document).mousedown(function () {
+            return false;
+        });
 		$(document).ready(function() {
 		
 		// Pengaturan Timer
@@ -352,6 +366,8 @@
 
              hitung();
         });
+        
+        
 
         // Pengaturan Alert
 		var AlertSelesai = function() {
@@ -397,7 +413,7 @@
 
 	</script>
 	<script>
-		function link(pj_id, n) {
+	    function link(pj_id, n) {
 			//get value
 			var pu_durasi = document.getElementById("pu_durasi").value;
 
