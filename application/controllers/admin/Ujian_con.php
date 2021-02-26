@@ -148,6 +148,7 @@ class Ujian_con extends CI_Controller {
 	{
 		$where = array('ujian_id' => $this->input->get('ujian_id'), );
 		$this->main_mod->delete('cbt_ujian', $where);
+		$this->session->set_flashdata('hapus','true');
 		redirect(base_url('index.php/admin/ujian_con/ujian'));
 	}
 

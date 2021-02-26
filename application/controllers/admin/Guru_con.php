@@ -215,6 +215,7 @@ class Guru_con extends CI_Controller {
     {
         $data = array('gm_id' => $this->input->get('gm_id'));
         $this->main_mod->delete('cbt_guru_mapel', $data);
+        $this->session->set_flashdata('hapus','true');
         redirect(base_url('index.php/admin/guru_con/mapel'));
     }
 

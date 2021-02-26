@@ -31,7 +31,7 @@
 						<td align="center"><button class="btn btn-danger btn-border dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi &nbsp;</button>
 							<div class="dropdown-menu">
 									<?php $title = $value['peserta_nama'] ?>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/peserta_con/peserta_reset')?>?peserta_id=<?php echo $value['peserta_id'];?>" title="<?php echo $title; ?>" onclick="return confirm('KONFIRMASI : Reset Password?');" >Reset Password</a>
+									<a href="<?php echo base_url('index.php/admin/peserta_con/peserta_reset')?>?peserta_id=<?php echo $value['peserta_id'];?>"  class="dropdown-item"  title="<?php echo $title; ?>">Reset Password</a>
 							</div>
 						</td>
 					</tr>
@@ -57,3 +57,54 @@ if ($this->session->flashdata('simpan') == 'true') { ?>
 	},10); 
  </script>
 <?php } ?>
+
+<?php 
+if ($this->session->flashdata('reset') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data password siswa berhasil direset!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
+
+<script type='text/javascript'>
+$('#reset_peserta').click(function(e) {
+					swal({
+						title: 'Are you sure?',
+						text: "You won't be able to revert this!",
+						type: 'warning',
+						buttons:{
+							confirm: {
+								text : 'Yes, delete it!',
+								className : 'btn btn-success'
+							},
+							cancel: {
+								visible: true,
+								className: 'btn btn-danger'
+							}
+						}
+					}).then((Delete) => {
+						if (Delete) {
+							swal({
+								title: 'Deleted!',
+								text: 'Your file has been deleted.',
+								type: 'success',
+								buttons : {
+									confirm: {
+										className : 'btn btn-success'
+									}
+								}
+							});
+						} else {
+							swal.close();
+						}
+					});
+				});	
+</script>		

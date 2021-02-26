@@ -96,7 +96,7 @@ class Pengaturan_con extends CI_Controller {
 
 		$this->load->model('admin/main_mod');
 		$this->main_mod->delete('cbt_admin', $where);
-
+		$this->session->set_flashdata('hapus','true');
 		redirect(base_url('index.php/admin/pengaturan_con/pengaturan')); 
 	}
 

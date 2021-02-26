@@ -167,6 +167,7 @@ class Peserta_con extends CI_Controller {
             'peserta_password_status' => 0,
         );
         $this->main_mod->update('cbt_peserta', $where, $data);
+        $this->session->set_flashdata('reset','true');
         redirect(base_url('index.php/admin/peserta_con/peserta'));
     }
 

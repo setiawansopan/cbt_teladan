@@ -104,4 +104,20 @@ if ($this->session->flashdata('update') == 'true') { ?>
 	},10); 
  </script>
 <?php } ?>
+
+<?php 
+if ($this->session->flashdata('hapus') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Data ujian berhasil dihapus!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>
 						

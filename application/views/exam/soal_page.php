@@ -253,12 +253,13 @@
 									</form>
 								</div>
 							</div>
+							<p><font color=#ffffff>Dikembangkan oleh ICT Teladan &copy; SMA Negeri 1 Teladan Yogyakarta</font></p>
 						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-
 
 		<!-- Popup Konfirmasi Selesai Ujian -->
 		<div class="modal fade" id="modalSelesai" tabindex="-1" role="dialog" aria-labelledby="modalSelesaiLabel" aria-hidden="true">
