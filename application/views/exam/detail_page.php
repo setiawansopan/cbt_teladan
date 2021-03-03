@@ -73,7 +73,7 @@
 												<tr>
 													<td width="15%">Mata Pelajaran</td>
 													<td width="5%">:</td>
-													<td width="65%"><?php echo $ujian->mapel_nama; ?></td>
+													<td width="65%"><?php echo $ujian->mapel_nama; ?> ( Penilaian <?php $uj = $ujian->ujian_jenis; if( $uj == 'U') echo 'Utama'; else if($uj == 'S') echo 'Susulan ';else echo 'Remidi' ?> )</td>
 												</tr>
 												<tr>
 													<td width="15%">Tingkat Kelas</td>
