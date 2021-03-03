@@ -98,12 +98,12 @@
 												<tr>
 													<td width="15%">Tampilkan Hasil</td>
 													<td width="5%">:</td>
-													<td width="65%"><?php if($ujian->ujian_hasil == 1) echo "YA. ( Hasil akan ditampilkan sesaat setelah penilaian berahir )"; else echo "TIDAK. ( Hasil tidak akan ditampilkan sesaat setelah penilaian berahir )"; ?></td>
+													<td width="65%"><?php if($ujian->ujian_hasil == 1) echo "YA. ( Hasil akan ditampilkan setelah penilaian berahir )"; else echo "TIDAK. ( Hasil tidak akan ditampilkan sesaat setelah penilaian berahir )"; ?></td>
 												</tr>
 												<tr>
 													<td width="15%">Pinalti Waktu</td>
 													<td width="5%">:</td>
-													<td width="65%"><?php if($ujian->ujian_pinalti == 1) echo "YA. ( Durasi ujian akan dikurangi dengan waktu keterlembatan )"; else echo "TIDAK. ( Durasi ujian tidak akan dikurangi dengan lama waktu keterlembatan )";?></td>
+													<td width="65%"><?php if($ujian->ujian_pinalti == 1) echo "YA. ( Durasi ujian akan dikurangi dengan waktu keterlambatan )"; else echo "TIDAK. ( Durasi ujian tidak akan dikurangi dengan lama waktu keterlembatan )";?></td>
 												</tr>
 											</table>
 										</div>
