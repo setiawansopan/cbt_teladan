@@ -155,20 +155,20 @@ function turun($persen){
                     <div class="progress-card">
                         <div class="progress-status">
                             <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;HDD Terpakai</span>
-                            <span class="text-muted fw-bold"> 60%</span>
+                            <span class="text-muted fw-bold"> 80%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="60%"></div>
+                            <div class="progress-bar progress-bar-striped <?php echo naik(80)?>" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="80%"></div>
                         </div>
                     </div>
 
                     <div class="progress-card">
                         <div class="progress-status">
                             <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;HDD Bebas</span>
-                            <span class="text-muted fw-bold"> 60%</span>
+                            <span class="text-muted fw-bold"> 20%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="60%"></div>
+                            <div class="progress-bar progress-bar-striped <?php echo turun(20)?>" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="20%"></div>
                         </div>
                     </div>
                 </div>
@@ -189,20 +189,20 @@ function turun($persen){
                     <div class="progress-card">
                         <div class="progress-status">
                             <span class="text-muted"><i class="fas fa-memory"></i>&nbsp;&nbsp;Memory Terpakai</span>
-                            <span class="text-muted fw-bold"> 60%</span>
+                            <span class="text-muted fw-bold"> 10%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="60%"></div>
+                            <div class="progress-bar progress-bar-striped <?php echo naik(10)?>" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="10%"></div>
                         </div>
                     </div>
                 </div>
                     <div class="progress-card">
                         <div class="progress-status">
                             <span class="text-muted"><i class="fas fa-memory"></i>&nbsp;&nbsp;Memory Bebas</span>
-                            <span class="text-muted fw-bold"> 60%</span>
+                            <span class="text-muted fw-bold"> 90%</span>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="60%"></div>
+                            <div class="progress-bar progress-bar-striped <?php echo turun(90)?>" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="" data-original-title="90%"></div>
                         </div>
                     </div>
                 </div>
