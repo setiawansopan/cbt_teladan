@@ -1,5 +1,65 @@
 <!-- awal kotak info atas -->
 <div class="card">
+
+	<!-- Modal tambah mapel -->
+	<div class="modal fade" id="laporanKD" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h5 class="modal-title">
+							<span class="fw-mediumbold">
+							Download</span> 
+							<span class="fw-light">
+							Laporan nilai KD
+							</span>
+						</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="<?php echo base_url('index.php/admin/mapel_con/mapel_add')?>" method="POST" class="form" >
+					<div class="modal-body">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group form-group-default">
+										<label>Nama Penilaian</label>
+										<input id="addNama" type="text" class="form-control" name="mapel_nama" >
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group form-group-default">
+										<label>Nama Mapel</label>
+										<input id="addKode" type="text" class="form-control" name="mapel_kode">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group form-group-default">
+										<label>Kompetensi Dasar</label>
+										<select name="mapel_kelompok" class="form-control" id="addKel">
+											<option value="">Pilih..</option>
+											<option value="A">Kelompok A</option>
+											<option value="B">Kelompok B</option>
+											<option value="C">Kelompok C</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+						
+					</div>
+					<div class="modal-footer border-0">
+						<button type="submit" class="btn btn-primary">Download</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- selesai modal -->
+
+
+
+
 	<div class="card-body">
 		<div class="table-responsive">
 			<form action="<?php echo base_url('index.php/admin/laporan_con/laporan')?>" method="POST" enctype="multipart/form-data">
@@ -78,7 +138,7 @@
 				 target="_blank">Daftar Nilai</a>
 				 <a class="dropdown-item" 
 				href="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak_kd')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
-				 target="_blank">Daftar Nilai KD</a>
+				 target="_blank" data-toggle="modal" data-target="#laporanKD">Daftar Nilai KD</a>
 			</div>
 		</div>
 		</div>
