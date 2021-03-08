@@ -74,12 +74,18 @@
 					<span class="sidebar-mini-icon">
 						<i class="fa fa-ellipsis-h"></i>
 					</span>
-					<h4 class="text-section">Database</h4>
+					<h4 class="text-section">Utilitas</h4>
+				</li>
+				<li class="nav-item <?php if($sid_active == 'server') echo 'active'?>">
+					<a href="<?php echo base_url('index.php/admin/server_con/server') ?>">
+						<i class="fas fa-desktop"></i>
+						<p>Server</p>
+					</a>
 				</li>
 				<li class="nav-item <?php if($sid_active == 'backup') echo 'active'?>">
 					<a href="<?php echo base_url('index.php/admin/backup_con/backup') ?>">
 						<i class="fas fa-database"></i>
-						<p>Backup</p>
+						<p>Database</p>
 					</a>
 				</li>
 			</ul>
