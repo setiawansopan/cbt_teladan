@@ -38,13 +38,16 @@ class Laporan_con extends CI_Controller {
 		$where1 = array(
 			'pj_ujian_id' => $this->input->post('ujian_id'),
 		);
-		$where_kd = array(
+		$where_ujian_kd = array(
 			'ujian_id' => $this->input->post('ujian_id'),
+		);
+		$where_soal_kd = array(
+			'soal_ujian_id' => $this->input->post('ujian_id'),
 		);
 		$data['ujian'] = $this->admin_mod->ujian_by_id($where)->result_array();
 		$data['laporan'] = $this->admin_mod->laporan($where1)->result_array();
-		$data['ujian_kd'] = $this->admin_mod->ujian_by_id($where_kd)->row();
-		$data['kd'] = $this->admin_mod->get_kd($where_kd)->result_array();
+		$data['ujian_kd'] = $this->admin_mod->ujian_by_id($where_ujian_kd)->row();
+		$data['kd'] = $this->admin_mod->get_kd($where_soal_kd)->result_array();
 		//load view
 		$this->load->view('admin/index', $data);
 	}
@@ -152,6 +155,21 @@ class Laporan_con extends CI_Controller {
 		$data['laporan'] = $this->admin_mod->laporan($where)->result_array();
 		$data['identitas'] = $this->admin_mod->laporan_identitas($where1)->row();
 		$this->load->view('print/laporan_penilaian', $data);
+	}
+
+	public function laporan_cetak_kd()
+	{
+		$where = array(
+			'pj_ujian_id' => $this->input->post('ujian_id'),
+			'soal_kd_id' => $this->input->post('kd_id'),
+		);
+		$where1 = array(
+			'ujian_id' => $this->input->post('ujian_id'),
+			'kd_id' => $this->input->post('kd_id'),
+		);
+		$data['laporan'] = $this->admin_mod->laporan_kd($where)->result_array();
+		$data['identitas'] = $this->admin_mod->laporan_identitas_kd($where1)->row();
+		$this->load->view('print/laporan_penilaian_kd', $data);
 	}
 
 	public function laporan_individu()

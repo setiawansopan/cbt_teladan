@@ -104,7 +104,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form action="<?php echo base_url('index.php/admin/laporan_con/laporan_kd')?>" method="POST" class="form" target="_blank" >
+					<form action="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak_kd')?>" method="POST" class="form" target="_blank" >
 					<div class="modal-body">
 							<div class="row">
 								<div class="col-sm-12">
@@ -122,7 +122,7 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Kompetensi Dasar</label>
-										<select name="kd" class="form-control" id="addKel">
+										<select name="kd_id" class="form-control" id="addKel">
 											<?php 
 											foreach ($kd as $kd) { ?>
 											<option value="<?php echo $kd['kd_id']; ?>"><?php echo $kd['kd_nomor'].' | '.$kd['kd_teks']?></option>
@@ -135,6 +135,7 @@
 						
 					</div>
 					<div class="modal-footer border-0">
+						<input type="hidden" name="ujian_id" value="<?php echo $ujian_kd->ujian_id; ?>">
 						<button type="submit" class="btn btn-primary">Download</button>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
 					</div>

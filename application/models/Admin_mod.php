@@ -57,8 +57,8 @@ class Admin_mod extends CI_Model {
 	{
 		return $this->db->select('*')
 				->from('cbt_kd')
-				->join('cbt_mapel','mapel_id = kd_mapel_id')
-				->join('cbt_ujian','ujian_mapel_id = mapel_id')
+				->join('cbt_soal','kd_id = soal_kd_id')
+				->group_by('soal_kd_id')
 				->order_by('kd_nomor')
 				->where($where)
 				->get();
@@ -114,11 +114,44 @@ class Admin_mod extends CI_Model {
 		->get();
 	}
 
+	public function laporan_kd($where)
+	{
+		return $this->db->select('
+			cbt_peserta.*,cbt_mapel.*, cbt_peserta_jawaban.*, cbt_peserta_ujian.pu_mulai,
+			sum(IF(soal_kunci = pj_jawaban, soal_skor, 0)) as nilai,
+			sum(IF(soal_kunci = pj_jawaban, 1, 0)) as benar,
+			sum(IF(soal_kunci != pj_jawaban, 1, 0)) as salah,
+			sum(soal_skor) as max_skor'
+		)
+		->from('cbt_soal')
+		->join('cbt_peserta_jawaban', 'soal_id = pj_soal_id')
+		->join('cbt_peserta', 'pj_peserta_id = peserta_id')
+		->join('cbt_peserta_ujian', 'pu_id = pj_pu_id')
+		->join('cbt_mapel', 'soal_mapel_id = mapel_id')
+		->join('cbt_kd','kd_id = soal_kd_id')
+		->where($where)
+		->group_by('peserta_id')
+		// ->order_by('pu_mulai ASC')
+		->order_by('peserta_kelas ASC')
+		->order_by('peserta_nama ASC')
+		->get();
+	}
+
 	public function laporan_identitas($where)
 	{
 		return $this->db->select('*')
 			->from('cbt_ujian')
 			->join('cbt_mapel', 'ujian_mapel_id = mapel_id')
+			->where($where)
+			->get();
+	}
+
+	public function laporan_identitas_kd($where)
+	{
+		return $this->db->select('*')
+			->from('cbt_ujian')
+			->join('cbt_mapel', 'ujian_mapel_id = mapel_id')
+			->join('cbt_kd','mapel_id = kd_mapel_id')
 			->where($where)
 			->get();
 	}
