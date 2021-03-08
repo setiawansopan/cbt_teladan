@@ -53,9 +53,17 @@ class Admin_mod extends CI_Model {
 				->get();
 	}
 
-	//--------------------------------------
-	//Bagian mapel
-	//--------------------------------------
+	public function get_kd($where)
+	{
+		return $this->db->select('*')
+				->from('cbt_kd')
+				->join('cbt_mapel','mapel_id = kd_mapel_id')
+				->join('cbt_ujian','ujian_mapel_id = mapel_id')
+				->order_by('kd_nomor')
+				->where($where)
+				->get();
+	}
+
 	public function guru_mapel()
 	{
 		return $this->db->select('cbt_guru.*, cbt_mapel.*, cbt_guru_mapel.*')

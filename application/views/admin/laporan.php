@@ -1,64 +1,6 @@
+
 <!-- awal kotak info atas -->
 <div class="card">
-
-	<!-- Modal tambah mapel -->
-	<div class="modal fade" id="laporanKD" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header border-0">
-						<h5 class="modal-title">
-							<span class="fw-mediumbold">
-							Download</span> 
-							<span class="fw-light">
-							Laporan nilai KD
-							</span>
-						</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<form action="<?php echo base_url('index.php/admin/mapel_con/mapel_add')?>" method="POST" class="form" >
-					<div class="modal-body">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="form-group form-group-default">
-										<label>Nama Penilaian</label>
-										<input id="addNama" type="text" class="form-control" name="mapel_nama" >
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group form-group-default">
-										<label>Nama Mapel</label>
-										<input id="addKode" type="text" class="form-control" name="mapel_kode">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group form-group-default">
-										<label>Kompetensi Dasar</label>
-										<select name="mapel_kelompok" class="form-control" id="addKel">
-											<option value="">Pilih..</option>
-											<option value="A">Kelompok A</option>
-											<option value="B">Kelompok B</option>
-											<option value="C">Kelompok C</option>
-										</select>
-									</div>
-								</div>
-
-							</div>
-						
-					</div>
-					<div class="modal-footer border-0">
-						<button type="submit" class="btn btn-primary">Download</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-					</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- selesai modal -->
-
-
-
 
 	<div class="card-body">
 		<div class="table-responsive">
@@ -144,5 +86,61 @@
 		</div>
 		<?php } ?>
 		</div>
-</div>						
-<br>
+</div>	
+
+	<!-- Modal tambah mapel -->
+	<div class="modal fade" id="laporanKD" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h5 class="modal-title">
+							<span class="fw-mediumbold">
+							Download</span> 
+							<span class="fw-light">
+							Laporan nilai KD
+							</span>
+						</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="<?php echo base_url('index.php/admin/laporan_con/laporan_kd')?>" method="POST" class="form" target="_blank" >
+					<div class="modal-body">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group form-group-default">
+										<label>Nama Penilaian</label>
+										<input id="addNama" type="text" class="form-control" name="ujian_nama" value="<?php echo $ujian_kd->ujian_nama;?>" >
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group form-group-default">
+										<label>Nama Mapel</label>
+										<input id="addKode" type="text" class="form-control" name="mapel_nama"  value="<?php echo $ujian_kd->mapel_nama;?>">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group form-group-default">
+										<label>Kompetensi Dasar</label>
+										<select name="kd" class="form-control" id="addKel">
+											<?php 
+											foreach ($kd as $kd) { ?>
+											<option value="<?php echo $kd['kd_id']; ?>"><?php echo $kd['kd_nomor'].' | '.$kd['kd_teks']?></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+
+							</div>
+						
+					</div>
+					<div class="modal-footer border-0">
+						<button type="submit" class="btn btn-primary">Download</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- selesai modal -->
+

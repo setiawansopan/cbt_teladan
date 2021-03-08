@@ -38,8 +38,13 @@ class Laporan_con extends CI_Controller {
 		$where1 = array(
 			'pj_ujian_id' => $this->input->post('ujian_id'),
 		);
+		$where_kd = array(
+			'ujian_id' => $this->input->post('ujian_id'),
+		);
 		$data['ujian'] = $this->admin_mod->ujian_by_id($where)->result_array();
 		$data['laporan'] = $this->admin_mod->laporan($where1)->result_array();
+		$data['ujian_kd'] = $this->admin_mod->ujian_by_id($where_kd)->row();
+		$data['kd'] = $this->admin_mod->get_kd($where_kd)->result_array();
 		//load view
 		$this->load->view('admin/index', $data);
 	}
