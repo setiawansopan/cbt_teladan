@@ -53,15 +53,15 @@
 </head>
 <body>
 		<?php
-	//header("Content-type: application/vnd-ms-excel");
-	//header("Content-Disposition: attachment; filename=Daftar Nilai $identitas->ujian_nama Mapel $identitas->mapel_nama Kelas $identitas->ujian_tingkat.xls");
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Daftar Nilai per KD $identitas->ujian_nama Mapel $identitas->mapel_nama Kelas $identitas->ujian_tingkat.xls");
 	?>
-<h3 align="center">LAPORAN HASIL PENILAIAN</h3>
-<table width="40%">
+<h3 align="center">LAPORAN HASIL PENILAIAN PER KOMPETENSI DASAR</h3>
+<table width="80%">
 	<tr>
-		<td>Mata Pelajaran</td>
-		<td>:</td>
-		<td><?php echo $identitas->mapel_nama; ?></td>
+		<td width="15%">Mata Pelajaran</td>
+		<td width="3%">:</td>
+		<td width="50%"><?php echo $identitas->mapel_nama; ?></td>
 	</tr>
 	<tr>
 		<td>Tingkat Kelas</td>
@@ -97,8 +97,8 @@
 	 	<th>Kelas</th>
 	 	<th>Benar</th>
 	 	<th>Salah</th>
-	 	<th>Nilai</th>
-	 	<th>Total Skor</th>
+	 	<th>Skor</th>
+	 	<th>Nilai Akhir</th>
 	 </tr>
 	 <?php 
 	 $no = 1;
@@ -113,7 +113,7 @@
 	 	<td align="center"><?php echo $value['benar']; ?></td>
 	 	<td align="center"><?php echo $value['salah']; ?></td>
 	 	<td align="center"><?php echo $value['nilai']; ?></td>
-	 	<td align="center"><?php echo $value['max_skor']; ?></td>
+	 	<td align="center"><?php echo round(($value['nilai'] / $value['max_skor'])*100,0); ?></td>
 	 </tr>
 	 <?php $no++; } ?>
 </table>
