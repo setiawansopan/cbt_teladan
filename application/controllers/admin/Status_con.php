@@ -86,6 +86,7 @@ class Status_con extends CI_Controller {
 		$this->main_mod->update('cbt_peserta_ujian', $where, $data);
 
 		//redirect
+		$this->session->set_flashdata('selesai','true');
 		redirect(base_url('index.php/admin/status_con/selesai'));
 
 	}
@@ -108,10 +109,31 @@ class Status_con extends CI_Controller {
 		$this->main_mod->delete('cbt_peserta_jawaban', $where_pj);
 
 		//redirect
+		$this->session->set_flashdata('res_penilaian','true');
 		redirect(base_url('index.php/admin/status_con/status'));
 	}
 
-		public function reopen_peserta()
+	public function reset_perangkat()
+	{
+		//get data
+		$where_pu = array(
+			'pu_peserta_id' => $this->input->get('peserta_id'), 
+			'pu_ujian_id'   => $this->input->get('ujian_id'), 
+		);
+
+		$set = array(
+			'pu_mac' => '',
+		);
+
+		//update
+		$this->main_mod->update('cbt_peserta_ujian', $where_pu, $set);
+
+		//redirect
+		$this->session->set_flashdata('res_perangkat','true');
+		redirect(base_url('index.php/admin/status_con/status'));
+	}
+
+	public function reopen_peserta()
 	{
 		//get data
 		$where_pu = array(

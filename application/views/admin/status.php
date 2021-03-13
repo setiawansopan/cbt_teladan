@@ -49,10 +49,11 @@
 							<button class="btn btn-danger btn-border dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aksi &nbsp;</button>
 								<div class="dropdown-menu">
 									<?php $title = $value['peserta_nama'];?>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/status_con/reset_peserta')?>?peserta_id=<?php echo $value['peserta_id']?>&ujian_id=<?php echo $value['pu_ujian_id']?>" onclick="return confirm('KONFIRMASI : Anda akan mereset penilaian. Semua data jawaban dan sesi milik peserta yang bersangkutan pada penilaian ini akan terhapus. Lanjutkan RESET?');" title="<?php echo $title; ?>">Reset</a>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/status_con/reset_peserta')?>?peserta_id=<?php echo $value['peserta_id']?>&ujian_id=<?php echo $value['pu_ujian_id']?>" onclick="return confirm('KONFIRMASI : Anda akan mereset penilaian. Semua data jawaban dan sesi milik peserta yang bersangkutan pada penilaian ini akan terhapus. Lanjutkan RESET?');" title="<?php echo $title; ?>">Reset Penilaian</a>
 
 									<!-- <a class="dropdown-item" href="<?php //echo base_url('index.php/admin/status_con/reopen_peserta')?>?peserta_id=<?php //echo $value['peserta_id']?>&ujian_id=<?php //echo $value['pu_ujian_id']?>" onclick="return confirm('KONFIRMASI : Anda akan membuka kembali penilaian.?');" title="<?php //echo $title; ?>">Reopen</a> -->
 
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/status_con/reset_perangkat')?>?peserta_id=<?php echo $value['peserta_id']?>&ujian_id=<?php echo $value['pu_ujian_id']?>" onclick="return confirm('KONFIRMASI : Anda akan mereset perangkat peserta. Lanjutkan RESET?');" title="<?php echo $title; ?>">Reset Perangkat</a>
 									<a class="dropdown-item" href="#" data-toggle="modal" data-target="#reopen<?php echo $value['peserta_id'];?>" title="<?php echo $title; ?>">Reopen</a>
 									
 							</div>
@@ -138,4 +139,36 @@ if ($this->session->flashdata('simpan') == 'true') { ?>
 			});  
 	},10); 
  </script>
-<?php } ?>						
+<?php } ?>	
+
+<?php 
+if ($this->session->flashdata('res_penilaian') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Reset penilaian peserta berhasil!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>		
+
+<?php 
+if ($this->session->flashdata('res_perangkat') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Reset perangkat peserta berhasil!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>		

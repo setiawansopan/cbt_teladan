@@ -95,7 +95,7 @@ class Admin_mod extends CI_Model {
 	public function laporan($where)
 	{
 		return $this->db->select('
-			cbt_peserta.*,cbt_mapel.*, cbt_peserta_jawaban.*, cbt_peserta_ujian.pu_mulai,
+			cbt_peserta.*,cbt_mapel.*, cbt_peserta_jawaban.*, cbt_peserta_ujian.pu_mulai,cbt_peserta_ujian.pu_jenis,
 			sum(IF(soal_kunci = pj_jawaban, soal_skor, 0)) as nilai,
 			sum(IF(soal_kunci = pj_jawaban, 1, 0)) as benar,
 			sum(IF(soal_kunci != pj_jawaban, 1, 0)) as salah,
@@ -117,7 +117,7 @@ class Admin_mod extends CI_Model {
 	public function laporan_kd($where)
 	{
 		return $this->db->select('
-			cbt_peserta.*,cbt_mapel.*, cbt_peserta_jawaban.*, cbt_peserta_ujian.pu_mulai,
+			cbt_peserta.*,cbt_mapel.*, cbt_peserta_jawaban.*, cbt_peserta_ujian.pu_mulai,cbt_peserta_ujian.pu_jenis,
 			sum(IF(soal_kunci = pj_jawaban, soal_skor, 0)) as nilai,
 			sum(IF(soal_kunci = pj_jawaban, 1, 0)) as benar,
 			sum(IF(soal_kunci != pj_jawaban, 1, 0)) as salah,

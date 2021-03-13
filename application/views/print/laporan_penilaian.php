@@ -80,6 +80,7 @@
 <table width="100%" border="1" >
 	 <tr>
 	 	<th>No</th>
+		<th>Jenis</th>
 	 	<th>Tgl. Penilaian</th>
 	 	<th>Wkt. Mulai</th>
 	 	<th>NIS</th>
@@ -95,8 +96,9 @@
 	 foreach ($laporan as $value) { ?>
 	 <tr>
 	 	<td align="center"><?php echo $no; ?></td>
+		<td align="center"><?php if($value['pu_jenis'] == 'U') echo "Utama"; else if($value['pu_jenis'] == 'S') echo "Susulan"; else if($value['pu_jenis'] == 'R') echo "Remidi"; else echo "-"; ?></td>
 	 	<td align="center"><?php $tgl = explode(' ', $value['pu_mulai']); echo $tgl[0]; ?></td>
-	 	<td align="center"><?php echo $tgl[1]; ?></td>
+	 	<td align="center"><?php echo $tgl[1]; ?></td> 
 	 	<td align="center"><?php echo $value['peserta_nis']; ?></td>
 	 	<td><?php echo strtoupper($value['peserta_nama']); ?></td>
 	 	<td align="center"><?php echo $value['peserta_kelas']; ?></td>

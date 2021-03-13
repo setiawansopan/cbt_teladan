@@ -181,6 +181,22 @@
 		</script>
 		<?php } ?>
 
+		<?php 
+		if ($this->session->flashdata('err_mac') == 'true') { ?>
+		<script type='text/javascript'>
+		setTimeout(function () {  
+			swal("Kesalahan!", "Ujian terdeteksi menggunakan lebih dari satu perangkat. Silahkan hubungi Administrator!", {
+					icon : "error",
+					buttons: {        			
+					confirm: {
+					className : 'btn btn-black'
+							}
+						},
+					});  
+			},10); 
+		</script>
+		<?php } ?>
+
 		<!-- End Custom template -->
 	</div>
 	<!--   Core JS Files   -->

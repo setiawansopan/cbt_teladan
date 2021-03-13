@@ -59,4 +59,20 @@
 	<?php } ?>
 	</div>
 </div>
+
+<?php 
+if ($this->session->flashdata('selesai') == 'true') { ?>
+<script type='text/javascript'>
+  setTimeout(function () {  
+	swal("Selamat!", "Set selesai penilaian berhasil!", {
+			icon : "success",
+			buttons: {        			
+			confirm: {
+			className : 'btn btn-black'
+					}
+				},
+			});  
+	},10); 
+ </script>
+<?php } ?>	
 						

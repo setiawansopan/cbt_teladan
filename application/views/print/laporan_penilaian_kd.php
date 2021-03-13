@@ -53,8 +53,8 @@
 </head>
 <body>
 		<?php
-	//header("Content-type: application/vnd-ms-excel");
-	//header("Content-Disposition: attachment; filename=Daftar Nilai $identitas->ujian_nama Mapel $identitas->mapel_nama Kelas $identitas->ujian_tingkat.xls");
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Daftar Nilai KD $identitas->ujian_nama Mapel $identitas->mapel_nama Kelas $identitas->ujian_tingkat.xls");
 	?>
 <h3 align="center">LAPORAN HASIL PENILAIAN</h3>
 <table width="40%">
@@ -90,6 +90,7 @@
 <table width="100%" border="1" >
 	 <tr>
 	 	<th>No</th>
+		<th>Jenis</th>
 	 	<th>Tgl. Penilaian</th>
 	 	<th>Wkt. Mulai</th>
 	 	<th>NIS</th>
@@ -97,14 +98,15 @@
 	 	<th>Kelas</th>
 	 	<th>Benar</th>
 	 	<th>Salah</th>
-	 	<th>Nilai</th>
-	 	<th>Total Skor</th>
+	 	<th>Skor</th>
+	 	<th>Nilai Akhir</th>
 	 </tr>
 	 <?php 
 	 $no = 1;
 	 foreach ($laporan as $value) { ?>
 	 <tr>
 	 	<td align="center"><?php echo $no; ?></td>
+		 <td align="center"><?php if($value['pu_jenis'] == 'U') echo "Utama"; else if($value['pu_jenis'] == 'S') echo "Susulan"; else if($value['pu_jenis'] == 'R') echo "Remidi"; else echo "-";?></td>
 	 	<td align="center"><?php $tgl = explode(' ', $value['pu_mulai']); echo $tgl[0]; ?></td>
 	 	<td align="center"><?php echo $tgl[1]; ?></td>
 	 	<td align="center"><?php echo $value['peserta_nis']; ?></td>
@@ -113,7 +115,7 @@
 	 	<td align="center"><?php echo $value['benar']; ?></td>
 	 	<td align="center"><?php echo $value['salah']; ?></td>
 	 	<td align="center"><?php echo $value['nilai']; ?></td>
-	 	<td align="center"><?php echo $value['max_skor']; ?></td>
+	 	<td align="center"><?php echo round($value['nilai']/$value['max_skor']*100,0); ?></td>
 	 </tr>
 	 <?php $no++; } ?>
 </table>

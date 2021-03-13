@@ -88,6 +88,7 @@ class Identitas extends CI_Controller {
 			'pu_peserta_id' => $peserta_id  
 		);
 		$pu_status = $this->main_mod->get_where('cbt_peserta_ujian', $where4)->row()->pu_status;
+		$pu_mac = $this->main_mod->get_where('cbt_peserta_ujian', $where4)->row()->pu_mac;
 
 		//ambil token dan mapel_id
 		$where = array('ujian_id' => $ujian_id);
@@ -97,6 +98,7 @@ class Identitas extends CI_Controller {
 		$durasi_ujian = $this->main_mod->get_where('cbt_ujian', $where)->row()->ujian_durasi;
 		$ujian_tanggal   = $this->main_mod->get_where('cbt_ujian', $where)->row()->ujian_tanggal;
 		$ujian_mulai   = $this->main_mod->get_where('cbt_ujian', $where)->row()->ujian_mulai;
+		$ujian_jenis = $this->main_mod->get_where('cbt_ujian', $where)->row()->ujian_jenis;
 		$ujian_pinalti = $this->main_mod->get_where('cbt_ujian', $where)->row()->ujian_pinalti;
 
 		if($ujian_pinalti == 1) {
@@ -127,6 +129,15 @@ class Identitas extends CI_Controller {
 			$this->session->set_flashdata('err_token', 'true');
 			redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
 		}
+
+		else if(!empty($pu_mac)) {
+			if($pu_mac != get_mac()){
+			//$this->session->set_flashdata('error', 'KESALAHAN : Token Tidak Valid');
+			$this->session->set_flashdata('err_mac', 'true');
+			redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
+			}
+		}
+
 		else
 		{
 			$where2 = array(
@@ -145,6 +156,8 @@ class Identitas extends CI_Controller {
 						'pu_mulai' => date('Y-m-d H:i:s'),
 						'pu_durasi' => $new_durasi,
 						'pu_status' => 'on',
+						'pu_jenis' => $ujian_jenis,
+						'pu_mac' => get_mac(),
 					);
 					$this->main_mod->insert('cbt_peserta_ujian', $data);
 
@@ -162,8 +175,17 @@ class Identitas extends CI_Controller {
 						);
 					}
 					$this->main_mod->insert_batch('cbt_peserta_jawaban', $datasoal);
-
 				}
+			
+			//isi mac setelah reset
+			if(!empty($cek->pu_peserta_id) && empty($cek->pu_mac)) {
+				
+				$set = array(
+					'pu_mac' => get_mac(),
+				);
+
+				$this->main_mod->update('cbt_peserta_ujian', $where2, $set);
+			}
 			
 			//buat session
 			$this->session->set_userdata('ujian_id', $ujian_id);
