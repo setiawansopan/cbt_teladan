@@ -130,13 +130,13 @@ class Identitas extends CI_Controller {
 			redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
 		}
 
-		else if(!empty($pu_mac)) {
-			if($pu_mac != get_mac()){
-			//$this->session->set_flashdata('error', 'KESALAHAN : Token Tidak Valid');
-			$this->session->set_flashdata('err_mac', 'true');
-			redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
-			}
-		}
+		// else if(!empty($pu_mac)) {
+		// 	if($pu_mac != get_mac()){
+		// 	//$this->session->set_flashdata('error', 'KESALAHAN : Token Tidak Valid');
+		// 	$this->session->set_flashdata('err_mac', 'true');
+		// 	redirect(base_url('index.php/exam/identitas/detail?ujian_id='.$ujian_id.''));
+		// 	}
+		// }
 
 		else
 		{
@@ -177,15 +177,14 @@ class Identitas extends CI_Controller {
 					$this->main_mod->insert_batch('cbt_peserta_jawaban', $datasoal);
 				}
 			
-			//isi mac setelah reset
-			if(!empty($cek->pu_peserta_id) && empty($cek->pu_mac)) {
-				
-				$set = array(
-					'pu_mac' => get_mac(),
-				);
-
-				$this->main_mod->update('cbt_peserta_ujian', $where2, $set);
-			}
+			if(!empty($cek->pu_peserta_id))
+				{
+					$set = array(
+						'pu_durasi' => $new_durasi,
+					);
+					
+					$this->main_mod->update('cbt_peserta_ujian', $where2, $set);
+				}
 			
 			//buat session
 			$this->session->set_userdata('ujian_id', $ujian_id);
