@@ -88,7 +88,7 @@ class Identitas extends CI_Controller {
 			'pu_peserta_id' => $peserta_id  
 		);
 		$pu_status = $this->main_mod->get_where('cbt_peserta_ujian', $where4)->row()->pu_status;
-		$pu_mac = $this->main_mod->get_where('cbt_peserta_ujian', $where4)->row()->pu_mac;
+		//$pu_mac = $this->main_mod->get_where('cbt_peserta_ujian', $where4)->row()->pu_mac;
 
 		//ambil token dan mapel_id
 		$where = array('ujian_id' => $ujian_id);

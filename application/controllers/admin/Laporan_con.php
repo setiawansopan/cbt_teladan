@@ -157,6 +157,19 @@ class Laporan_con extends CI_Controller {
 		$this->load->view('print/laporan_penilaian', $data);
 	}
 
+	public function laporan_import()
+	{
+		$where = array(
+			'pj_ujian_id' => $this->input->get('ujian_id'),
+		);
+		$where1 = array(
+			'ujian_id' => $this->input->get('ujian_id'),
+		);
+		$data['laporan'] = $this->admin_mod->laporan($where)->result_array();
+		$data['identitas'] = $this->admin_mod->laporan_identitas($where1)->row();
+		$this->load->view('print/laporan_import', $data);
+	}
+
 	public function laporan_cetak_kd()
 	{
 		$where = array(

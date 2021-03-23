@@ -81,6 +81,9 @@
 				 <a class="dropdown-item" 
 				href="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak_kd')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
 				 target="_blank" data-toggle="modal" data-target="#laporanKD">Daftar Nilai KD</a>
+				 <a class="dropdown-item" 
+				href="<?php echo base_url('index.php/admin/laporan_con/laporan_import')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
+				 target="_blank">Format Import</a>
 			</div>
 		</div>
 		</div>
