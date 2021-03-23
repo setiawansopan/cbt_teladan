@@ -53,8 +53,8 @@
 </head>
 <body>
 		<?php
-	//header("Content-type: application/vnd-ms-excel");
-	//header("Content-Disposition: attachment; filename=Daftar Nilai $identitas->ujian_nama Mapel $identitas->mapel_nama Kelas $identitas->ujian_tingkat.xls");
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Daftar Nilai $identitas->ujian_nama Mapel $identitas->mapel_nama Kelas $identitas->ujian_tingkat.xls");
 	?>
 <h3 align="center">Format Upload Nilai <?php echo $identitas->ujian_nama ?></h3>
 <table width="40%" border="1">
