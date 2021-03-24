@@ -247,6 +247,7 @@ class Ujian_con extends CI_Controller {
 		$where2 = array('soal_ujian_id' => $this->input->get('ujian_id') );
 		$data['jum_soal'] = $this->main_mod->get_where('cbt_soal', $where2)->num_rows();
 		$data['total'] = $this->admin_mod->total_skor($where2)->row();
+		$data['data_soal'] = $this->main_mod->get_where('cbt_soal', $where2)->result_array();
 
 		$where3 = array('soal_id' => $this->input->get('soal_id') );
 		$data['soal'] = $this->main_mod->get_where('cbt_soal', $where3)->row();
@@ -335,6 +336,18 @@ class Ujian_con extends CI_Controller {
 
 		$this->main_mod->update('cbt_soal', $where, $datasoal);
 		redirect(base_url('index.php/admin/ujian_con/soal_preview').'?ujian_id='.$ujian_id.'&soal_id='.$soal_id.'&n='.$nomor);
+	}
+
+	public function pindah_soal()
+	{
+		$data = $this->input->post('data_soal');
+		$data_soal = explode('-',$data);
+		$ujian_id = $data_soal[1];
+		$soal_id  = $data_soal[0];
+		$nomor    = $data_soal[2];
+
+		redirect(base_url('index.php/admin/ujian_con/soal_preview').'?ujian_id='.$ujian_id.'&soal_id='.$soal_id.'&n='.$nomor);
+
 	}
 
 }
