@@ -30,8 +30,9 @@ class Server_con extends CI_Controller {
 		//halaman yg diambil
 		$data['page']  = "server";
 
-		//load model
-
+		//jumlah user online
+		$where = array('pu_status' => 'on', );
+		$data['jumon']    = $this->main_mod->get_where('cbt_peserta_ujian',$where)->num_rows();
 		//load view
 		$this->load->view('admin/index', $data);
 	}

@@ -16,7 +16,7 @@ function turun($persen){
 ?>
 
 <div class="row">
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-2">
 		<div class="card card-stats card-round">
 			<div class="card-body ">
 				<div class="row">
@@ -35,7 +35,7 @@ function turun($persen){
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-2">
 		<div class="card card-stats card-round">
 			<div class="card-body ">
 				<div class="row">
@@ -54,7 +54,7 @@ function turun($persen){
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-2">
 		<div class="card card-stats card-round">
 			<div class="card-body">
 				<div class="row">
@@ -73,7 +73,7 @@ function turun($persen){
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-6 col-md-2">
 		<div class="card card-stats card-round">
 			<div class="card-body">
 				<div class="row">
@@ -85,6 +85,26 @@ function turun($persen){
 					<div class="col-7 col-stats">
 						<div class="numbers">
 							<p class="card-category">Mesin Server</p>
+							<h5 class="card-title"><?php $srv = explode(' ',$_SERVER['SERVER_SOFTWARE']); echo substr($srv[0],0,6); ?></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3 col-md-2">
+		<div class="card card-stats card-round">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-5">
+						<div class="icon-big text-center">
+							<i class="flaticon-time text-primary"></i>
+						</div>
+					</div>
+					<div class="col-7 col-stats">
+						<div class="numbers">
+							<p class="card-category">Waktu Load</p>
 							<h4 class="card-title"><?php $srv = explode(' ',$_SERVER['SERVER_SOFTWARE']); echo $srv[0]; ?></h4>
 						</div>
 					</div>
@@ -92,6 +112,28 @@ function turun($persen){
 			</div>
 		</div>
 	</div>
+
+	<div class="col-sm-3 col-md-2">
+		<div class="card card-stats card-round">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-5">
+						<div class="icon-big text-center">
+							<i class="flaticon-user text-primary"></i>
+						</div>
+					</div>
+					<div class="col-7 col-stats">
+						<div class="numbers">
+							<p class="card-category">User Online</p>
+							<h4 class="card-title"><?php if(!empty($jumon)) echo $jumon; ?> Usr</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 </div>
 <!-- akhir kotak info atas -->
 	
@@ -128,7 +170,7 @@ function turun($persen){
 
                     <div class="progress-card">
                         <div class="progress-status">
-                            <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;HDD Usage</span>
+                            <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;SSD Usage</span>
                             <span class="text-muted fw-bold"> 95%</span>
                         </div>
                         <div class="progress">
@@ -147,14 +189,14 @@ function turun($persen){
 	<div class="col-md-6">
 		<div class="card">
 			<div class="card-header">
-				<div class="card-title">Informasi HDD</div>
+				<div class="card-title">Informasi SSD</div>
 			</div>
             <div class="card-body">
 			<!-- pasang disini -->
 
                     <div class="progress-card">
                         <div class="progress-status">
-                            <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;HDD Terpakai</span>
+                            <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;SSD Terpakai</span>
                             <span class="text-muted fw-bold"> 80%</span>
                         </div>
                         <div class="progress">
@@ -164,7 +206,7 @@ function turun($persen){
 
                     <div class="progress-card">
                         <div class="progress-status">
-                            <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;HDD Bebas</span>
+                            <span class="text-muted"><i class="fas fa-database"></i>&nbsp;&nbsp;SSD Bebas</span>
                             <span class="text-muted fw-bold"> 20%</span>
                         </div>
                         <div class="progress">
