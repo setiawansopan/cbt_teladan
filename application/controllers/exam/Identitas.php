@@ -179,11 +179,12 @@ class Identitas extends CI_Controller {
 			
 			if(!empty($cek->pu_peserta_id))
 				{
+					if($ujian_pinalti == 1) {
 					$set = array(
 						'pu_durasi' => $new_durasi,
 					);
-					
 					$this->main_mod->update('cbt_peserta_ujian', $where2, $set);
+				    }
 				}
 			
 			//buat session

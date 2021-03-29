@@ -357,7 +357,7 @@
                     } 
                 }
 
-                if(jam == 0 && menit == 0 && detik == 0) { 
+                if(jam < 0 || menit < 0 || detik < 0) { 
                     clearInterval(hitung); 
 
 	            	alert('Waktu Anda telah habis');
