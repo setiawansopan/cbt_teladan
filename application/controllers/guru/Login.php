@@ -29,7 +29,8 @@ class Login extends CI_Controller {
 			$login_guru = TRUE;
 			$this->session->set_userdata('login_guru', $login_guru);
         	$this->session->set_userdata('guru_id', $guru->guru_id);
-        	redirect(base_url('index.php/admin/dashboard_con/dashboard'));
+			$this->session->set_userdata('guru_nama', $guru->guru_nama);
+        	redirect(base_url('index.php/guru/dashboard/dashboard'));
 		}
 		
 		else if(!empty($guru->guru_nik) && $guru->guru_password_status == 0)

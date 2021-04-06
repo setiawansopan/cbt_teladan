@@ -9,7 +9,7 @@
 				foreach ($navbar as $nav) {
 				?>
 				<li class="nav-item <?php if($nav == $nav_active) echo 'active'; ?>">	
-					<a class="nav-link" href="<?php echo base_url('index.php/admin/'.$sid_active.'_con/'.$nav)?>">
+					<a class="nav-link" href="<?php echo base_url('index.php/guru/'.$sid_active.'/'.$nav)?>">
 						<?php echo ucfirst($nav); ?>
 					</a>
 				</li>
@@ -22,27 +22,27 @@
 			<li class="nav-item dropdown hidden-caret">
 				<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 					<div class="avatar-sm">
-						<img src="<?php echo base_url('images/admin'); ?>/<?php echo $this->session->admin_user; ?>.jpg" alt="..." class="avatar-img rounded-circle">
+						<img src="<?php echo base_url('images/guru'); ?>/<?php echo $this->session->guru_user; ?>.jpg" alt="..." class="avatar-img rounded-circle">
 					</div>
 				</a>
 				<ul class="dropdown-menu dropdown-user animated fadeIn">
 					<div class="dropdown-user-scroll scrollbar-outer">
 						<li>
 							<div class="user-box">
-								<div class="avatar-lg"><img src="<?php echo base_url('images/admin'); ?>/<?php echo $this->session->admin_user; ?>.jpg" alt="image profile" class="avatar-img rounded"></div>
+								<div class="avatar-lg"><img src="<?php echo base_url('images/guru'); ?>/<?php echo $this->session->guru_user; ?>.jpg" alt="image profile" class="avatar-img rounded"></div>
 								<div class="u-text">
-									<h4>Administrator</h4>
-									<p class="text-muted">Admin pengelola sistem CBT Teladan.</p>
+									<h4>guruistrator</h4>
+									<p class="text-muted">guru pengelola sistem CBT Teladan.</p>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="<?php echo base_url('index.php/admin/profil_con/profil') ?>">Profile</a>
+							<a class="dropdown-item" href="<?php echo base_url('index.php/guru/profil/profil') ?>">Profile</a>
 							<!-- <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#">Setting</a> -->
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="<?php echo base_url('index.php/admin/login_con/logout') ?>">Logout</a>
+							<a class="dropdown-item" href="<?php echo base_url('index.php/guru/login/logout') ?>">Logout</a>
 						</li>
 					</div>
 				</ul>
