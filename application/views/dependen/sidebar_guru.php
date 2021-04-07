@@ -47,13 +47,6 @@
 						<p>Ujian</p>
 					</a>
 				</li>
-				<li class="nav-item <?php if($sid_active == 'status') echo 'active'?>">
-					<a href="<?php echo base_url('index.php/guru/status/status') ?>">
-						<i class="fas fa-user-edit"></i>
-						<p>Status Peserta</p>
-						</span>
-					</a>
-				</li>
 				<li class="nav-item <?php if($sid_active == 'laporan') echo 'active'?>">
 					<a href="<?php echo base_url('index.php/guru/laporan/laporan') ?>">
 						<i class="far fa-chart-bar"></i>
