@@ -288,6 +288,15 @@ class Admin_mod extends CI_Model {
 
 	}
 
+	public function data_ujian($where)
+	{
+		return $this->db->select('*')
+		->from('cbt_ujian')
+		->join('cbt_mapel', 'ujian_mapel_id = mapel_id')
+		->where($where)
+		->get();
+	}
+
 }
 
 

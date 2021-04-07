@@ -8,7 +8,7 @@
 		<?php $this->load->view('dependen/sidebar_guru.php');?>	
 
 		<!-- include navbar -->
-		<?php $this->load->view('dependen/navbar.php');?>	
+		<?php $this->load->view('dependen/navbar_guru.php');?>	
 		
 		
 		<div class="main-panel full-height">

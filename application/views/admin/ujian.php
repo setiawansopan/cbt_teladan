@@ -39,13 +39,16 @@
 									<?php $title = $value['mapel_nama'].' - Tingkat '.$value['ujian_tingkat'] ?>
 									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/soal')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Tambah Soal</a>
 									<?php if(!empty($value['soal_id'])) { ?>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/soal_preview')?>?ujian_id=<?php echo $value['ujian_id']?>&soal_id=<?php echo $value['soal_id'] ?>&n=1" title="<?php echo $title; ?>">Preview</a>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/soal_preview')?>?ujian_id=<?php echo $value['ujian_id']?>&soal_id=<?php echo $value['soal_id'] ?>&n=1" title="<?php echo $title; ?>">Review Soal</a>
 									<?php } ?>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_reset')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Reset Token</a>
 									<div role="separator" class="dropdown-divider"></div>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_edit')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Edit</a>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_cetak')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>" target="_blank">Cetak</a>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_preview')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>" target="_blank">Preview</a>
+									<div role="separator" class="dropdown-divider"></div>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_reset')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Reset Token</a>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_edit')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Edit Ujian</a>
 									<?php if(empty($value['soal_id'])) { ?>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_delete')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>" onclick="return confirm('KONFIRMASI : Hapus data..?');">Hapus</a>
+									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_delete')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>" onclick="return confirm('KONFIRMASI : Hapus data..?');">Hapus Ujian</a>
 									<?php } ?>
 							</div>
 						</td>

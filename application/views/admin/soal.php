@@ -9,7 +9,7 @@
 				<form action="<?php echo base_url('index.php/admin/ujian_con/soal_add') ?>" method="POST">
 					<div class="form-group">
 						<!-- <label>Kompetensi Dasar</label> -->
-						<select name="soal_kd_id" class="form-control" id="addKD" required="flags">
+						<select name="soal_kd_id" class="form-control col-md-11" id="addKD" required="flags">
 							<option value="">Pilih KD ...</option>
 							<?php 
 								foreach ($kompetensi as $value) {

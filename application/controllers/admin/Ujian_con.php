@@ -350,4 +350,21 @@ class Ujian_con extends CI_Controller {
 
 	}
 
+	public function ujian_cetak()
+	{
+		$where = array(
+			'soal_ujian_id' => $this->input->get('ujian_id'),
+		);
+
+		$where1 = array(
+			'ujian_id' => $this->input->get('ujian_id'),
+		);
+
+		$where2 = array('set_id' => 1);
+		$data['sekolah'] = $this->main_mod->get_where('cbt_setting', $where2)->row();
+		$data['soal'] = $this->main_mod->get_where('cbt_soal',$where)->result_array();
+		$data['identitas'] = $this->admin_mod->data_ujian($where1)->row();
+		$this->load->view('print/ujian_cetak', $data);
+	}
+
 }
