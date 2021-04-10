@@ -43,7 +43,6 @@
 									<?php } ?>
 									<div role="separator" class="dropdown-divider"></div>
 									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_cetak')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>" target="_blank">Cetak</a>
-									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_preview')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>" target="_blank">Preview</a>
 									<div role="separator" class="dropdown-divider"></div>
 									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_reset')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Reset Token</a>
 									<a class="dropdown-item" href="<?php echo base_url('index.php/admin/ujian_con/ujian_edit')?>?ujian_id=<?php echo $value['ujian_id']?>" title="<?php echo $title; ?>">Edit Ujian</a>
