@@ -31,8 +31,8 @@
 							<div class="user-box">
 								<div class="avatar-lg"><img src="<?php echo base_url('images/guru'); ?>/<?php echo $this->session->guru_user; ?>.jpg" alt="image profile" class="avatar-img rounded"></div>
 								<div class="u-text">
-									<h4>guruistrator</h4>
-									<p class="text-muted">guru pengelola sistem CBT Teladan.</p>
+									<h4>Akun Guru</h4>
+									<p class="text-muted"><?php echo $this->session->guru_nama;?></p>
 								</div>
 							</div>
 						</li>
