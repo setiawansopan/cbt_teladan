@@ -168,7 +168,7 @@ class Ujian extends CI_Controller {
 		$data['sid_active'] = "ujian";
 
 		//halaman yg diambil
-		$data['page']  = "soal";
+		$data['page']  = "soal_page";
 
 		//data ujian
 		$where1 = array('ujian_id' => $this->input->get('ujian_id') );
@@ -240,7 +240,7 @@ class Ujian extends CI_Controller {
 		$data['sid_active'] = "ujian";
 
 		//halaman yg diambil
-		$data['page']  = "soal_preview";
+		$data['page']  = "soal_preview_page";
 
 		//load model
 		$where1 = array('ujian_id' => $this->input->get('ujian_id') );
@@ -296,7 +296,7 @@ class Ujian extends CI_Controller {
 		$data['sid_active'] = "ujian";
 
 		//halaman yg diambil
-		$data['page']  = "soal_edit";
+		$data['page']  = "soal_edit_page";
 
 		//load model
 		$where1 = array('ujian_id' => $this->input->get('ujian_id') );
