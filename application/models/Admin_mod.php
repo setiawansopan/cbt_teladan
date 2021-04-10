@@ -31,7 +31,29 @@ class Admin_mod extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ujian_guru($where)
+	{
+		$query = $this->db->select('cbt_ujian.*, cbt_mapel.*, count(soal_id) as jum_soal, min(soal_id) as soal_id')
+		->from('cbt_ujian')
+		->join('cbt_mapel','ujian_mapel_id = mapel_id')
+		->join('cbt_soal', 'ujian_id = soal_ujian_id', 'left')
+		->where($where)
+		->group_by('ujian_id')
+		->order_by('ujian_tanggal ASC, ujian_tingkat ASC, ujian_mulai ASC')
+		->get();
+		return $query->result_array();
+	}
+
 	public function ujian_by_id($where)
+	{
+		return $this->db->select('*')
+		->from('cbt_ujian')
+		->join('cbt_mapel','ujian_mapel_id = mapel_id')
+		->where($where)
+		->get();
+	}
+
+	public function ujian_by_id_guru($where)
 	{
 		return $this->db->select('*')
 		->from('cbt_ujian')
@@ -49,6 +71,15 @@ class Admin_mod extends CI_Model {
 				->from('cbt_mapel')
 				->join('cbt_ujian', 'mapel_id = ujian_mapel_id', 'left')
 				->group_by('mapel_id')
+				->order_by('mapel_urut')
+				->get();
+	}
+
+	public function mapel_guru($where)
+	{
+		return $this->db->select('*')
+				->from('cbt_mapel')
+				->where($where)
 				->order_by('mapel_urut')
 				->get();
 	}

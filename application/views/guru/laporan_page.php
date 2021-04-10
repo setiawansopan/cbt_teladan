@@ -4,7 +4,7 @@
 
 	<div class="card-body">
 		<div class="table-responsive">
-			<form action="<?php echo base_url('index.php/admin/laporan_con/laporan')?>" method="POST" enctype="multipart/form-data">
+			<form action="<?php echo base_url('index.php/guru/laporan/laporan')?>" method="POST" enctype="multipart/form-data">
 				<div class="form-group  col-md-6">
 					<label for="tingkat">Pilih Ujian</label>
 					<div class="select2-input">
@@ -49,7 +49,7 @@
 								<div class="dropdown-menu">
 									<?php $title = $value['peserta_nama']; ?>
 									<a class="dropdown-item" 
-									href="<?php echo base_url('index.php/admin/laporan_con/laporan_individu')?>?peserta_id=<?php echo $value['peserta_id']?>&ujian_id=<?php echo $value['pj_ujian_id']; ?>&mapel_id=<?php echo $value['mapel_id']?>" 
+									href="<?php echo base_url('index.php/guru/laporan/laporan_individu')?>?peserta_id=<?php echo $value['peserta_id']?>&ujian_id=<?php echo $value['pj_ujian_id']; ?>&mapel_id=<?php echo $value['mapel_id']?>" 
 									title="<?php echo $title; ?>" target="_blank">Lihat Hasil</a>
 							</div>
 						</td>
@@ -67,7 +67,7 @@
 		<button class="btn btn-danger btn-border dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cetak Laporan &nbsp;</button> &nbsp; &nbsp; &nbsp; 
 			<div class="dropdown-menu">
 				<a class="dropdown-item" 
-				href="<?php echo base_url('index.php/admin/laporan_con/daftar_hadir')?>?ujian_id=<?php echo $value['pj_ujian_id']; ?>&mapel_id=<?php echo $value['mapel_id']?>&tingkat=<?php echo $value['peserta_kelas_tingkat']?>" 
+				href="<?php echo base_url('index.php/guru/laporan/daftar_hadir')?>?ujian_id=<?php echo $value['pj_ujian_id']; ?>&mapel_id=<?php echo $value['mapel_id']?>&tingkat=<?php echo $value['peserta_kelas_tingkat']?>" 
 				target="_blank">Daftar hadir</a>			
 			</div>
 		</div>
@@ -76,13 +76,13 @@
 		<button class="btn btn-danger btn-border dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download &nbsp;</button> 
 			<div class="dropdown-menu">			
 				<a class="dropdown-item" 
-				href="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
+				href="<?php echo base_url('index.php/guru/laporan/laporan_cetak')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
 				 target="_blank">Daftar Nilai</a>
 				 <a class="dropdown-item" 
-				href="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak_kd')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
+				href="<?php echo base_url('index.php/guru/laporan/laporan_cetak_kd')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
 				 target="_blank" data-toggle="modal" data-target="#laporanKD">Daftar Nilai KD</a>
 				 <a class="dropdown-item" 
-				href="<?php echo base_url('index.php/admin/laporan_con/laporan_import')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
+				href="<?php echo base_url('index.php/guru/laporan/laporan_import')?>?ujian_id=<?php echo $value['pj_ujian_id'] ?>&mapel_id=<?php echo $value['mapel_id']?>" 
 				 target="_blank">Format Import</a>
 			</div>
 		</div>
@@ -107,7 +107,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form action="<?php echo base_url('index.php/admin/laporan_con/laporan_cetak_kd')?>" method="POST" class="form" target="_blank" >
+					<form action="<?php echo base_url('index.php/guru/laporan/laporan_cetak_kd')?>" method="POST" class="form" target="_blank" >
 					<div class="modal-body">
 							<div class="row">
 								<div class="col-sm-12">

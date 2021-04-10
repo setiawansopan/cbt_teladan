@@ -2,7 +2,7 @@
 <div class="card">
 	<div class="card-body">
 		<div class="table-responsive">
-			<form action="<?php echo base_url('index.php/admin/laporan_con/laporan_lembarjawab')?>" method="POST" enctype="multipart/form-data" target="_blank">
+			<form action="<?php echo base_url('index.php/guru/laporan/laporan_lembarjawab')?>" method="POST" enctype="multipart/form-data" target="_blank">
 				<div class="form-group">
 					<label for="tingkat">Pilih Ujian</label>
 					<div class="select2-input col-md-7">

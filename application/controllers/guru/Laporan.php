@@ -34,6 +34,7 @@ class Laporan extends CI_Controller {
 		//data ujian selesai
 		$where = array(
 			'ujian_tanggal <= ' => date('Y-m-d'),
+			'mapel_id' => $this->session->mapel_id,
 		);
 		$where1 = array(
 			'pj_ujian_id' => $this->input->post('ujian_id'),
@@ -44,7 +45,7 @@ class Laporan extends CI_Controller {
 		$where_soal_kd = array(
 			'soal_ujian_id' => $this->input->post('ujian_id'),
 		);
-		$data['ujian'] = $this->admin_mod->ujian_by_id($where)->result_array();
+		$data['ujian'] = $this->admin_mod->ujian_by_id_guru($where)->result_array();
 		$data['laporan'] = $this->admin_mod->laporan($where1)->result_array();
 		$data['ujian_kd'] = $this->admin_mod->ujian_by_id($where_ujian_kd)->row();
 		$data['kd'] = $this->admin_mod->get_kd($where_soal_kd)->result_array();
@@ -71,11 +72,12 @@ class Laporan extends CI_Controller {
 		//data ujian selesai
 		$where = array(
 			'ujian_tanggal <= ' => date('Y-m-d'),
+			'mapel_id' => $this->session->mapel_id,
 		);
 		$where1 = array(
 			'pj_ujian_id' => $this->input->post('ujian_id'),
 		);
-		$data['ujian'] = $this->admin_mod->ujian_by_id($where)->result_array();
+		$data['ujian'] = $this->admin_mod->ujian_by_id_guru($where)->result_array();
 		$data['laporan'] = $this->admin_mod->laporan($where1)->result_array();
 		
 		//load view
@@ -101,11 +103,12 @@ class Laporan extends CI_Controller {
 		//data ujian selesai
 		$where = array(
 			'ujian_tanggal <= ' => date('Y-m-d'),
+			'mapel_id' => $this->session->mapel_id,
 		);
 		$where1 = array(
 			'pj_ujian_id' => $this->input->post('ujian_id'),
 		);
-		$data['ujian']   = $this->admin_mod->ujian_by_id($where)->result_array();
+		$data['ujian']   = $this->admin_mod->ujian_by_id_guru($where)->result_array();
 		$data['laporan'] = $this->admin_mod->laporan($where1)->result_array();
 		
 		//load view

@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('main_mod');
-		//$this->load->model('guru_mod');
+		//$this->load->model('admin_mod');
 
 	}
 
@@ -21,8 +21,10 @@ class Login extends CI_Controller {
 				'guru_nik' => $this->input->post('username'),
 				'guru_password' => md5($this->input->post('password'))
 			);
-
 		$guru = $this->main_mod->get_where('cbt_guru', $datalog)->row();
+
+		$where_guru = array('gm_guru_id' => $guru->guru_id);
+		$mapel_id = $this->main_mod->get_where('cbt_guru_mapel', $where_guru)->row();
 
 		if(!empty($guru->guru_nik) && $guru->guru_password_status != 0) 
 		{
@@ -30,6 +32,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('login_guru', $login_guru);
         	$this->session->set_userdata('guru_id', $guru->guru_id);
 			$this->session->set_userdata('guru_nama', $guru->guru_nama);
+			$this->session->set_userdata('mapel_id', $mapel_id->gm_mapel_id);
         	redirect(base_url('index.php/guru/dashboard/dashboard'));
 		}
 		

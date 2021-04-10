@@ -32,7 +32,8 @@ class Ujian extends CI_Controller {
 		$data['page']  = "ujian_page";
 
 		//load model
-		$data['ujian'] = $this->admin_mod->ujian_all();
+		$where_mapel = array('mapel_id' => $this->session->mapel_id);
+		$data['ujian'] = $this->admin_mod->ujian_guru($where_mapel);
 
 		//load view
 		$this->load->view('guru/index', $data);
@@ -55,8 +56,8 @@ class Ujian extends CI_Controller {
 		$data['page']  = "ujian_buat_page";
 
 		//load model
-		$data['mapel'] = $this->main_mod->select_order('cbt_mapel','*','mapel_urut')->result_array();
-		// $data['rombel']  = $this->ujian_mod->rombel();
+		$where_mapel = array('mapel_id' => $this->session->mapel_id);
+		$data['mapel'] = $this->admin_mod->mapel_guru($where_mapel)->result_array();
 
 		//load view
 		$this->load->view('guru/index', $data);
@@ -106,7 +107,8 @@ class Ujian extends CI_Controller {
 		//load model
 		$where = array('ujian_id' => $this->input->get('ujian_id') );
 		$data['ujian'] = $this->main_mod->get_where('cbt_ujian', $where)->row();
-		$data['mapel'] = $this->main_mod->select_order('cbt_mapel','*','mapel_urut')->result_array();
+		$where_mapel = array('mapel_id' => $this->session->mapel_id);
+		$data['mapel'] = $this->admin_mod->mapel_guru($where_mapel)->result_array();
 
 		//load view
 		$this->load->view('guru/index', $data);

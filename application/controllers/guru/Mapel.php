@@ -32,51 +32,11 @@ class Mapel extends CI_Controller {
 		$data['page']  = "mapel_page";
 
 		//load model
-		$data['mapel'] = $this->admin_mod->mapel_all()->result_array();
+		$where_mapel = array('mapel_id' => $this->session->mapel_id);
+		$data['mapel'] = $this->admin_mod->mapel_guru($where_mapel)->result_array();
 
 		//load view
 		$this->load->view('guru/index', $data);
-	}
-
-	public function mapel_add()
-	{
-		//post data
-		$datamap = array(
-			'mapel_id' => uniqid(),
-			'mapel_nama' => $this->input->post('mapel_nama'),
-			'mapel_kode' => $this->input->post('mapel_kode'), 
-			'mapel_urut' => $this->input->post('mapel_urut'), 
-			'mapel_kelompok' => $this->input->post('mapel_kelompok'),  
-		);
-
-		//load model
-		$this->main_mod->insert('cbt_mapel', $datamap);
-		$this->session->set_flashdata('simpan','true');
-		redirect(base_url('index.php/guru/mapel/mapel'));
-	}
-
-	public function mapel_update()
-	{
-		$where = array('mapel_id' => $this->input->post('mapel_id'));
-		//post data
-		$datamap = array(
-			'mapel_nama' => $this->input->post('mapel_nama'),
-			'mapel_kode' => $this->input->post('mapel_kode'), 
-			'mapel_urut' => $this->input->post('mapel_urut'), 
-			'mapel_kelompok' => $this->input->post('mapel_kelompok'),  
-		);
-
-		//load model
-		$this->main_mod->update('cbt_mapel', $where, $datamap);
-		$this->session->set_flashdata('update','true');
-		redirect(base_url('index.php/guru/mapel/mapel'));
-	}
-
-	public function mapel_del()
-	{
-		$where = array('mapel_id' => $this->input->get('mapel_id'));
-		$this->main_mod->delete('cbt_mapel', $where);
-		redirect(base_url('index.php/guru/mapel/mapel'));
 	}
 
 	public function kompetensi()
@@ -96,7 +56,8 @@ class Mapel extends CI_Controller {
 		$data['page']  = "kompetensi_page";
 
 		//load model
-		$data['mapel'] = $this->main_mod->select_order('cbt_mapel','*','mapel_urut, mapel_nama')->result_array();
+		$where_mapel = array('mapel_id' => $this->session->mapel_id);
+		$data['mapel'] = $this->admin_mod->mapel_guru($where_mapel)->result_array();
 
 		//get mapel_id
 		if(!empty($this->input->post('mapel_id')))
