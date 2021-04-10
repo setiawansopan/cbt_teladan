@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-body">
-				<form action="<?php echo base_url('index.php/admin/ujian_con/ujian_add')?>" method="POST" class="form">
+				<form action="<?php echo base_url('index.php/guru/ujian/ujian_add')?>" method="POST" class="form">
 				<div class="form-group col-md-8">
 					<label for="nama_ujian">Nama Ujian</label>
 					<input type="text" class="form-control" id="nama_ujian" name="ujian_nama" required="flag" >
